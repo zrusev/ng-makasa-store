@@ -1,7 +1,17 @@
 <mat-toolbar color="primary">
-  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <button class="toolbar-item" mat-button [matMenuTriggerFor]="menu">
+    <i class="material-icons">menu</i>
+    МЕНЮ</button>
   <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/account/login">Login</button>
-      <button mat-menu-item routerLink="/account/register">Register</button>
+      <button mat-menu-item routerLink="/account/login">Вход</button>
+      <button mat-menu-item routerLink="/account/register">Регистрация</button>
   </mat-menu>
+  <button class="toolbar-item" mat-button routerLink="/home">
+    <i class="material-icons">home</i>
+    НАЧАЛО
+  </button>
+  <button class="toolbar-item" mat-button routerLink="/about">
+    <i class="material-icons">person_pin</i>
+    ЗА НАС
+  </button>
 </mat-toolbar>

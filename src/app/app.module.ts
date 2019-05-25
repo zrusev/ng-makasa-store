@@ -11,16 +11,22 @@ import { ToolbarComponent } from './components/shared/toolbar/toolbar.component'
 import { FooterComponent } from './components/shared/footer/footer.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AboutComponent } from './components/about/about.component';
+import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,

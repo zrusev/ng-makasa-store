@@ -2,7 +2,7 @@
 
 @include mat-core();
 
-$makasa-theme-primary: mat-palette($mat-green);
+$makasa-theme-primary: mat-palette($mat-lime);
 $makasa-theme-accent:  mat-palette($mat-pink, A200, A100, A400);
 $makasa-theme-warn:    mat-palette($mat-red);
 

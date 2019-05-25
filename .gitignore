@@ -50,3 +50,6 @@ Thumbs.db
 /database.rules.json
 /.firebaserc
 /.firebase
+
+# Assets folder
+src/assets

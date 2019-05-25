@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatCarouselModule } from '@ngmodule/material-carousel';
 import {
   MatButtonModule, 
   MatCheckboxModule, 
@@ -6,7 +7,9 @@ import {
   MatMenuModule, 
   MatFormFieldModule, 
   MatInputModule,
-  MatFormFieldControl
+  MatFormFieldControl,
+  MatTabsModule,
+  MatListModule
 } from '@angular/material';
 
 @NgModule({
@@ -18,6 +21,9 @@ import {
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTabsModule,
+    MatListModule,
+    MatCarouselModule,
   ],
   exports: [
     MatButtonModule, 
@@ -26,6 +32,9 @@ import {
     MatMenuModule,
     MatInputModule,
     MatFormFieldModule,
+    MatTabsModule,
+    MatListModule,
+    MatCarouselModule,
   ]
 })
 export class MaterialModule { }
