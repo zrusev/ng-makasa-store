@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$makasa-theme-primary: mat-palette($mat-green);
+$makasa-theme-accent:  mat-palette($mat-pink, A200, A100, A400);
+$makasa-theme-warn:    mat-palette($mat-red);
+
+$makasa-theme-theme: mat-light-theme($makasa-theme-primary, $makasa-theme-accent, $makasa-theme-warn);
+
+@include angular-material-theme($makasa-theme-theme);
