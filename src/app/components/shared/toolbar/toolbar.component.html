@@ -1,17 +1,36 @@
-<mat-toolbar color="primary">
-  <button class="toolbar-item" mat-button [matMenuTriggerFor]="menu">
+ <mat-toolbar color="primary">
+  <!-- <button class="toolbar-item" mat-button [matMenuTriggerFor]="menu">
     <i class="material-icons">menu</i>
-    МЕНЮ</button>
+  МЕНЮ</button>
   <mat-menu #menu="matMenu">
-      <button mat-menu-item routerLink="/account/login">Вход</button>
-      <button mat-menu-item routerLink="/account/register">Регистрация</button>
-  </mat-menu>
+    <button mat-menu-item routerLink="/account/login">Вход</button>
+    <button mat-menu-item routerLink="/account/register">Регистрация</button>
+  </mat-menu> -->
   <button class="toolbar-item" mat-button routerLink="/home">
     <i class="material-icons">home</i>
     НАЧАЛО
   </button>
   <button class="toolbar-item" mat-button routerLink="/about">
-    <i class="material-icons">person_pin</i>
+    <i class="material-icons">store</i>
     ЗА НАС
   </button>
+  
+  <div *ngIf="authService.user | async; else login">
+    <small class="toolbar-item">Здравейте, <i>{{ (authService.user | async)?.displayName }}</i> !</small>
+    <button class="toolbar-item" mat-button routerLink="/account/profile">
+      <i class="material-icons">person_pin</i>
+      ПРОФИЛ
+    </button>
+    <button class="toolbar-item" mat-button (click)="logout()">
+      <i class="material-icons">exit_to_app</i>
+      ИЗХОД
+    </button>
+  </div>
+
+  <ng-template #login>
+    <button class="toolbar-item" mat-button routerLink="/account">
+      <i class="material-icons">person_pin</i>
+      ВХОД / РЕГИСТРАЦИЯ
+    </button>
+  </ng-template>
 </mat-toolbar>

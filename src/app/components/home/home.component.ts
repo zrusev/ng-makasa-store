@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
+
 
 @Component({
   selector: 'app-home',
@@ -9,8 +11,10 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   slides$: Observable<string[]>;
-  
-  constructor (private http: HttpClient) {
+  email: string;
+  password: string;
+
+  constructor (private http: HttpClient, public authService: AuthService) {
   }
   
   ngOnInit() {
