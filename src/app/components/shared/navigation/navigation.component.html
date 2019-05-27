@@ -1,0 +1,26 @@
+<a class="toolbar-item" mat-button routerLink="/home">
+  <i class="material-icons">home</i>
+  НАЧАЛО
+</a>
+<a class="toolbar-item" mat-button routerLink="/about">
+  <i class="material-icons">store</i>
+  ЗА НАС
+</a>          
+<span *ngIf="authService.user | async; else login">
+  <small class="toolbar-item">Здравейте, <i>{{ (authService.user | async)?.displayName }}</i> !</small>
+  <a class="toolbar-item" mat-button routerLink="/account/profile">
+    <i class="material-icons">person_pin</i>
+    ПРОФИЛ
+  </a>
+  <a class="toolbar-item" mat-button (click)="logout()">
+    <i class="material-icons">exit_to_app</i>
+    ИЗХОД
+  </a>
+</span>
+
+<ng-template #login>
+    <a class="toolbar-item" mat-button routerLink="/account">
+      <i class="material-icons">person_pin</i>
+      ВХОД / РЕГИСТРАЦИЯ
+    </a>
+</ng-template>

@@ -22,6 +22,8 @@ import { AuthService } from './core/services/auth.service';
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { AccountComponent } from './components/identity/account/account.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
+import { MenuComponent } from './components/shared/menu/menu.component';
+import { NavigationComponent } from './components/shared/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ProfileComponent } from './components/identity/profile/profile.componen
     AboutComponent,
     HomeComponent,
     AccountComponent,
-    ProfileComponent
+    ProfileComponent,
+    MenuComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

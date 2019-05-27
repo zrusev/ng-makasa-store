@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { AuthService } from 'src/app/core/services/auth.service';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,9 +6,11 @@ import { AuthService } from 'src/app/core/services/auth.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent {
-  constructor (public authService: AuthService) { }
+  @Output() sidenavToggle = new EventEmitter<void>();
 
-  logout() {
-    this.authService.logout();
+  constructor() { }
+
+  toggleSidenav() {
+    this.sidenavToggle.emit();
   }
 }

@@ -1,36 +1,26 @@
- <mat-toolbar color="primary">
-  <!-- <button class="toolbar-item" mat-button [matMenuTriggerFor]="menu">
-    <i class="material-icons">menu</i>
-  МЕНЮ</button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item routerLink="/account/login">Вход</button>
-    <button mat-menu-item routerLink="/account/register">Регистрация</button>
-  </mat-menu> -->
-  <button class="toolbar-item" mat-button routerLink="/home">
-    <i class="material-icons">home</i>
-    НАЧАЛО
-  </button>
-  <button class="toolbar-item" mat-button routerLink="/about">
-    <i class="material-icons">store</i>
-    ЗА НАС
-  </button>
-  
-  <div *ngIf="authService.user | async; else login">
-    <small class="toolbar-item">Здравейте, <i>{{ (authService.user | async)?.displayName }}</i> !</small>
-    <button class="toolbar-item" mat-button routerLink="/account/profile">
-      <i class="material-icons">person_pin</i>
-      ПРОФИЛ
-    </button>
-    <button class="toolbar-item" mat-button (click)="logout()">
-      <i class="material-icons">exit_to_app</i>
-      ИЗХОД
-    </button>
-  </div>
+<div style="height: 100vh;">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <div fxShow="true" fxHide.gt-sm="true">
+          <a (click)="sidenav.toggle()"><i class="material-icons">menu</i></a>
+        </div>        
+        <div fxShow="true" fxHide.lt-md="true">                    
+            <app-navigation></app-navigation>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
 
-  <ng-template #login>
-    <button class="toolbar-item" mat-button routerLink="/account">
-      <i class="material-icons">person_pin</i>
-      ВХОД / РЕГИСТРАЦИЯ
-    </button>
-  </ng-template>
-</mat-toolbar>
+    <mat-sidenav-container fxFlexFill>
+        <mat-sidenav #sidenav>
+          <mat-nav-list>
+            <app-menu></app-menu>
+          </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content fxFlexFill>
+          <main>
+              <router-outlet></router-outlet>
+          </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    <app-footer></app-footer>
+</div>
