@@ -12,18 +12,21 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
-import { FooterComponent } from './components/shared/footer/footer.component';
-
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 
 import { AuthService } from './core/services/auth.service';
+
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+
+import { ToolbarComponent } from './components/shared/toolbar/toolbar.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 import { AccountComponent } from './components/identity/account/account.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
+import { cookieConfig } from './cookie.consent';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { NavigationComponent } from './components/shared/navigation/navigation.c
     FlexLayoutModule,
     MaterialModule,
     FirebaseModule,
-    NgxAuthFirebaseUIModule
+    NgxAuthFirebaseUIModule,
+    NgcCookieConsentModule.forRoot(cookieConfig),
   ],
   providers: [ AuthService ],
   bootstrap: [ AppComponent ]

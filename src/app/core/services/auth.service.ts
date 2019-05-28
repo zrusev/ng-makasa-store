@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 
-import { User } from '../models/user';
-
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
@@ -15,8 +13,7 @@ export class AuthService {
 
   constructor(private afAuth: AngularFireAuth,
               private router: Router,
-              private snackbar: MatSnackBar
-  ) { 
+              private snackbar: MatSnackBar) {
     this.user = afAuth.authState;
   }
 
