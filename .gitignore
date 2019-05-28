@@ -53,3 +53,6 @@ Thumbs.db
 
 # Assets folder
 src/assets
+
+# Environments folder
+src/environments/**
