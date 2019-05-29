@@ -1,0 +1,7 @@
+.close-button {
+    display:flex;
+    justify-content: end;
+    cursor: pointer;
+    background-color: black;
+    color: white
+}

@@ -18,7 +18,6 @@ export class HomeComponent implements OnInit {
     public authService: AuthService) { }
 
   ngOnInit() {
-    this.slides$ = this.http
-      .get<string[]>('../../../assets/images.json', { responseType: 'json' });
+    this.slides$ = this.http.get<string[]>('../../../assets/images.json', { responseType: 'json' });
   }
 }

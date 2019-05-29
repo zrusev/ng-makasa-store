@@ -1,26 +1,11 @@
-<div style="height: 100vh;">
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <div fxShow="true" fxHide.gt-sm="true">
-          <a (click)="sidenav.toggle()"><i class="material-icons">menu</i></a>
-        </div>        
-        <div fxShow="true" fxHide.lt-md="true">                    
-            <app-navigation></app-navigation>
-        </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
-
-    <mat-sidenav-container fxFlexFill>
-        <mat-sidenav #sidenav>
-          <mat-nav-list>
-            <app-menu></app-menu>
-          </mat-nav-list>
-        </mat-sidenav>
-        <mat-sidenav-content fxFlexFill>
-          <main>
-              <router-outlet></router-outlet>
-          </main>
-        </mat-sidenav-content>
-    </mat-sidenav-container>
-    <app-footer></app-footer>
-</div>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <div fxShow="true" fxHide.gt-sm="true">
+      <a class="menu-item" (click)="toggleSidenav()">
+        <i class="material-icons">menu</i>
+      </a>
+    </div>        
+    <div fxShow="true" fxHide.lt-md="true">                    
+        <app-navigation></app-navigation>
+    </div>
+</mat-toolbar-row>
