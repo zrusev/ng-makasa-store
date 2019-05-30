@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
+import { LanguageService } from './core/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,10 @@ import { NgcCookieConsentService } from 'ngx-cookieconsent';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private ccService: NgcCookieConsentService) { }
- }
+  constructor(
+    private ccService: NgcCookieConsentService,
+    private languageService: LanguageService
+  ) {
+      this.languageService.setInitialAppLanguage();
+    }
+}

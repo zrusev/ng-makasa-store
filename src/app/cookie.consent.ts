@@ -21,7 +21,7 @@ export const cookieConfig: NgcCookieConsentConfig = {
   },
   type: 'info',
   content: {
-    message: 'Този сайт използва бисквитки (\'cookies\'), които ни помагат, за да предоставим някои функционалности.',
+    message: 'Този сайт използва бисквитки (\cookies\), които ни помагат, за да предоставим някои функционалности.',
     dismiss: 'ОК',
     deny: 'Откажи',
     link: 'Научи повече',

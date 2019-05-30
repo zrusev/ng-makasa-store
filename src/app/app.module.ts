@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 import { FirebaseModule } from './firebase.module';
@@ -12,9 +12,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthService } from './core/services/auth.service';
+import { LanguageService } from './core/services/language.service';
 
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -50,8 +53,18 @@ import { cookieConfig } from './cookie.consent';
     FirebaseModule,
     NgxAuthFirebaseUIModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (http: HttpClient) => new TranslateHttpLoader(http, 'assets/i18n/', '.json'),
+          deps: [HttpClient]
+      }
+    }),
   ],
-  providers: [ AuthService ],
+  providers: [
+    AuthService,
+    LanguageService
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
