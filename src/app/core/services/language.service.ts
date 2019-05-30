@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
+import { TranslateCacheService } from 'ngx-translate-cache';
 
 @Injectable ()
 export class LanguageService {
@@ -8,6 +9,7 @@ export class LanguageService {
 
     constructor(
         private translateService: TranslateService,
+        private translateCacheService: TranslateCacheService,
         private ccService: NgcCookieConsentService
     ) { }
 
@@ -15,11 +17,11 @@ export class LanguageService {
         this.translateService.addLangs(['bg', 'en']);
         this.translateService.setDefaultLang('bg');
 
-        const language = this.translateService.getBrowserLang();
+        this.translateCacheService.init();
+
+        const language = this.translateCacheService.getCachedLanguage() || this.translateService.getBrowserLang();
         this.translateService.use(language.match(/bg|en/) ? language : 'bg');
         this.selected = language;
-
-      //TODO: get from rdx storage
 
         this.translateCookie();
     }
@@ -34,7 +36,6 @@ export class LanguageService {
     setLanguage(lng) {
         this.translateService.use(lng);
         this.selected = lng;
-        //TODO: add to rgx storage
 
         this.translateCookie();
     }
