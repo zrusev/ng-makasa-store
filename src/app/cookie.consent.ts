@@ -20,12 +20,5 @@ export const cookieConfig: NgcCookieConsentConfig = {
     }
   },
   type: 'info',
-  content: {
-    message: 'Този сайт използва бисквитки (\cookies\), които ни помагат, за да предоставим някои функционалности.',
-    dismiss: 'ОК',
-    deny: 'Откажи',
-    link: 'Научи повече',
-    href: 'https://bg.wikipedia.org/wiki/HTTP-%D0%B1%D0%B8%D1%81%D0%BA%D0%B2%D0%B8%D1%82%D0%BA%D0%B0',
-    policy: 'Cookie Политика'
-  }
+  content: { }
 };
