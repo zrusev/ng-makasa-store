@@ -1,21 +1,17 @@
 <section>
-  <div class="container"
-      fxLayout
-      fxLayout.xs="column"
-      fxLayoutAlign="center">
-    <div fxFlex="100%">
+    <div class="container">
       <mat-carousel
         timings="250ms ease-in"
         [autoplay]="true"
-        interval="2500"
-        color="accent"
+        interval="5000"
+        color="primary"
         maxWidth="auto"
         proportion="25"
         slides="3"
         [loop]="true"
-        [hideArrows]="true"
-        [hideIndicators]="true"
-        [useKeyboard]="true"
+        [hideArrows]="false"
+        [hideIndicators]="false"
+        [useKeyboard]="false"
         [useMouseWheel]="false"
         orientation="ltr"
       >
@@ -28,5 +24,5 @@
         ></mat-carousel-slide>
       </mat-carousel>
     </div>
-  </div>
+
 </section>

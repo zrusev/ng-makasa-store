@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
 import {
+  MatSnackBarModule,
   MatButtonModule,
   MatCheckboxModule,
   MatToolbarModule,
@@ -16,6 +17,7 @@ import {
 @NgModule({
   declarations: [],
   imports: [
+    MatSnackBarModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
@@ -29,6 +31,7 @@ import {
     MatSelectModule,
   ],
   exports: [
+    MatSnackBarModule,
     MatButtonModule,
     MatCheckboxModule,
     MatToolbarModule,
