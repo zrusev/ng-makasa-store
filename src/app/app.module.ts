@@ -16,8 +16,9 @@ import { LanguageService } from './core/services/language.service';
 
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
-import { TranslateModule } from '@ngx-translate/core';
-import { TranslateCacheModule } from 'ngx-translate-cache';
+import { TranslateModule, TranslateModuleConfig, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateCacheModule, TranslateCacheConfig, TranslateCacheService, TranslateCacheSettings } from 'ngx-translate-cache';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -29,10 +30,25 @@ import { ProfileComponent } from './components/identity/profile/profile.componen
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 
-import { cookieCacheConfig } from './core/config/cookie.cache.consent';
-import { cookieConfig } from './core/config/cookie.consent';
-import { translateConfig } from './core/config/translate.loader';
+import { cookieConfig } from './core/config/cookie.config';
 
+const translateConfig: TranslateModuleConfig = {
+  loader: {
+    provide: TranslateLoader,
+    useFactory: (http: HttpClient) => (new TranslateHttpLoader(http, 'assets/i18n/', '.json')),
+    deps: [HttpClient]
+  }
+};
+
+const cookieCacheConfig: TranslateCacheConfig = {
+  cacheService: {
+      provide: TranslateCacheService,
+      useFactory: (translateService, translateCacheSettings) => (new TranslateCacheService(translateService, translateCacheSettings)),
+      deps: [ TranslateService, TranslateCacheSettings ]
+    },
+    cacheName: 'lang',
+    cacheMechanism: 'Cookie',
+};
 
 @NgModule({
   declarations: [
