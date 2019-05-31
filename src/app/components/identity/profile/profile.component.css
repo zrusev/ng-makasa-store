@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    ::ng-deep mat-card {
+        width: 300px;
+    }
+}
