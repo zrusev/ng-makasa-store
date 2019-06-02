@@ -6,8 +6,8 @@
   <i class="material-icons">store</i>
   {{ 'navigation.about' | translate }}
 </a>          
-<span *ngIf="authService.user | async; else login">
-  <small class="toolbar-item">{{ 'profile.greeting' | translate:{'name': (authService.user | async)?.displayName} }}</small>
+<span *ngIf="authService.user$ | async; else login">
+  <small class="toolbar-item">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
   <a class="toolbar-item" mat-button routerLink="/account/profile">
     <i class="material-icons">person_pin</i>
     {{ 'navigation.profile' | translate }}

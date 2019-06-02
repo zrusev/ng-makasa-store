@@ -1,47 +1,29 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
-
-import { Observable } from 'rxjs';
-
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+
+import { User } from '../models/user';
 
 @Injectable()
 export class AuthService {
-  user: Observable<firebase.User>;
+  user$: Observable<User>;
 
   constructor(
     private afAuth: AngularFireAuth,
-    private router: Router,
-    private snackbar: MatSnackBar
+    private afs: AngularFirestore,
+    private router: Router
   ) {
-    this.user = afAuth.authState;
-  }
-
-  signup(email: string, password: string) {
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        this.router.navigate([ '/login' ]);
-      })
-      .catch((error) => {
-        this.snackbar.open(error.message, 'Undo', {
-          duration: 3000
-        });
-      });
-  }
-
-  login(email: string, password: string) {
-    this.afAuth.auth.signInWithEmailAndPassword(email, password)
-      .then((userData) => {
-        this.router.navigate([ '/user' ]);
-        localStorage.setItem('email', userData.user.email);
-      })
-      .catch((error) => {
-        this.snackbar.open(error.message, 'Undo', {
-          duration: 3000
-        });
-      });
+    this.user$ = this.afAuth.authState.pipe(switchMap(user => {
+      if (user) {
+        return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+      } else {
+        return of(null);
+      }
+    }));
   }
 
   logout() {
@@ -50,5 +32,14 @@ export class AuthService {
       .signOut();
 
     this.router.navigate([ '/' ]);
+  }
+
+  updateUserData(user) {
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    const data: User = {
+      ...user,
+      roles: { reader: true }
+    };
+    return userRef.set(data, { merge: true });
   }
 }
