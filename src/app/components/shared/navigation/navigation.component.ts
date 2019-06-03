@@ -9,12 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent {
+  isAdmin: boolean;
 
-  constructor(
-    public authService: AuthService,
-    private snackBar: MatSnackBar,
-    private translateService: TranslateService
-  ) { }
+  constructor(public authService: AuthService,
+              private snackBar: MatSnackBar,
+              private translateService: TranslateService) { }
 
   logout() {
     this.authService.logout();

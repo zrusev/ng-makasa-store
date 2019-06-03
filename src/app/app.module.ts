@@ -31,6 +31,7 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 
 import { cookieConfig } from './core/config/cookie.config';
+import { AdminComponent } from './components/identity/admin/admin.component';
 
 const translateConfig: TranslateModuleConfig = {
   loader: {
@@ -60,7 +61,8 @@ const cookieCacheConfig: TranslateCacheConfig = {
     AccountComponent,
     ProfileComponent,
     MenuComponent,
-    NavigationComponent
+    NavigationComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

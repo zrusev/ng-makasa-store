@@ -39,4 +39,32 @@ export class AuthService {
     };
     return userRef.set(data, { merge: true });
   }
+
+  canRead(user: User): boolean {
+    const allowed = ['reader', 'writer', 'admin'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canEdit(user: User): boolean {
+    const allowed = ['writer', 'admin'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  canDelete(user: User): boolean {
+    const allowed = ['admin'];
+    return this.checkAuthorization(user, allowed);
+  }
+
+  checkAuthorization(user: User, allowedRoles: string[]): boolean {
+    if (!user) {
+      return false;
+    }
+
+    for (const role of allowedRoles) {
+      if ( user.roles[role] ) {
+        return true;
+      }
+    }
+    return false;
+  }
 }
