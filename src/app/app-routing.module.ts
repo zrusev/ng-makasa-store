@@ -4,7 +4,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { AccountComponent } from './components/identity/account/account.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
-import {LoggedInGuard} from 'ngx-auth-firebaseui';
+import { LoggedInGuard } from 'ngx-auth-firebaseui';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },

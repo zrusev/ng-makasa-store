@@ -2,6 +2,9 @@ import { Component, OnInit, DoCheck} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthProvider } from 'ngx-auth-firebaseui';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { map, take, tap } from 'rxjs/operators';
+import { debug } from 'util';
+import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: 'app-account',
@@ -10,28 +13,30 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class AccountComponent implements OnInit, DoCheck {
   loggedUserName: string;
+  isEmailVerified: boolean;
   providers = AuthProvider;
 
-  constructor(
-    private router: Router,
-    private authService: AuthService
-  ) { }
+  constructor(private router: Router,
+              private authService: AuthService) { }
 
   ngOnInit() {
     this.loggedUserName = null;
   }
 
   ngDoCheck() {
-    if (this.loggedUserName !== null) {
+    if (this.loggedUserName !== null && this.isEmailVerified) {
       this.router.navigate(['/home']);
     }
   }
 
   catchSuccess(event) {
     this.loggedUserName = event.displayName;
+    this.isEmailVerified = event.emailVerified;
 
-    this.authService.user$.subscribe(async (user) => {
-      await this.authService.updateUserData(user);
+    this.authService.user$.subscribe((user) => {
+      if (user && !user.roles && !event.emailVerified) {
+        this.authService.updateUserData(user);
+      }
     });
   }
 }

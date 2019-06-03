@@ -12,25 +12,22 @@ import { User } from '../models/user';
 export class AuthService {
   user$: Observable<User>;
 
-  constructor(
-    private afAuth: AngularFireAuth,
-    private afs: AngularFirestore,
-    private router: Router
-  ) {
-    this.user$ = this.afAuth.authState.pipe(switchMap(user => {
-      if (user) {
-        return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
-      } else {
-        return of(null);
+  constructor(private afAuth: AngularFireAuth,
+              private afs: AngularFirestore,
+              private router: Router) {
+    this.user$ = this.afAuth.authState
+      .pipe(switchMap(user => {
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
       }
-    }));
+      ));
   }
 
   logout() {
-    this.afAuth
-      .auth
-      .signOut();
-
+    this.afAuth.auth.signOut();
     this.router.navigate([ '/' ]);
   }
 
