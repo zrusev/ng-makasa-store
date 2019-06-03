@@ -6,6 +6,10 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
+export function config() {
+  return environment.appName;
+}
+
 @NgModule({
   declarations: [],
   imports: [
@@ -15,7 +19,7 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
     AngularFireAuthModule,
     NgxAuthFirebaseUIModule.forRoot(
       environment.firebase,
-      () => (environment.appName),
+      config,
       { authGuardFallbackURL: environment.authGuardFallbackURL }),
   ]
 })

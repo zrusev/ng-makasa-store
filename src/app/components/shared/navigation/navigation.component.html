@@ -1,26 +1,36 @@
 <a class="toolbar-item" mat-button routerLink="/home">
-  <i class="material-icons">home</i>
   {{ 'navigation.home' | translate }}
 </a>
 <a class="toolbar-item" mat-button routerLink="/about">
-  <i class="material-icons">store</i>
   {{ 'navigation.about' | translate }}
-</a>          
+</a>
+<a class="toolbar-item" mat-button routerLink="/about">
+  {{ 'navigation.promotions' | translate }}
+</a>
+<a class="toolbar-item" mat-button routerLink="/about">
+  {{ 'navigation.gallery' | translate }}
+</a>
+<a class="toolbar-item" mat-button routerLink="/about">
+  {{ 'navigation.blog' | translate }}
+</a>
+<a class="toolbar-item" mat-button routerLink="/about">
+  {{ 'navigation.contacts' | translate }}
+</a>
 <span *ngIf="authService.user$ | async; else login">
-  <small class="toolbar-item">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
   <a class="toolbar-item" mat-button routerLink="/account/profile">
-    <i class="material-icons">person_pin</i>
     {{ 'navigation.profile' | translate }}
   </a>
   <a class="toolbar-item" mat-button (click)="logout()">
-    <i class="material-icons">exit_to_app</i>
     {{ 'navigation.logout' | translate }}
   </a>
   <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin">
-    <i class="material-icons">store</i>
     {{ 'navigation.admin_area' | translate }}
   </a>  
+  <small class="toolbar-item">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
 </span>
+<a>
+  <app-language></app-language>
+</a>
 
 <ng-template #login>
     <a class="toolbar-item" mat-button routerLink="/account">

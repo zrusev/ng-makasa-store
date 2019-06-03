@@ -32,6 +32,7 @@ import { NavigationComponent } from './components/shared/navigation/navigation.c
 
 import { cookieConfig } from './core/config/cookie.config';
 import { AdminComponent } from './components/identity/admin/admin.component';
+import { LanguageComponent } from './components/shared/language/language.component';
 
 const translateConfig: TranslateModuleConfig = {
   loader: {
@@ -62,7 +63,8 @@ const cookieCacheConfig: TranslateCacheConfig = {
     ProfileComponent,
     MenuComponent,
     NavigationComponent,
-    AdminComponent
+    AdminComponent,
+    LanguageComponent
   ],
   imports: [
     BrowserModule,

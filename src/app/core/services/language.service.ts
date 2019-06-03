@@ -28,8 +28,8 @@ export class LanguageService {
 
     getLanguages() {
         return [
-            {text: 'Български', value: 'bg'},
-            {text: 'English', value: 'en'}
+            {text: 'БГ', value: 'bg'},
+            {text: 'EN', value: 'en'}
         ]
     }
 
