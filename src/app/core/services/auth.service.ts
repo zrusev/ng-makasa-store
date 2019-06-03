@@ -31,11 +31,11 @@ export class AuthService {
     this.router.navigate([ '/' ]);
   }
 
-  updateUserData(user) {
+  updateUserData(user, roles) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
     const data: User = {
       ...user,
-      roles: { reader: true }
+      roles
     };
     return userRef.set(data, { merge: true });
   }
@@ -61,7 +61,7 @@ export class AuthService {
     }
 
     for (const role of allowedRoles) {
-      if ( user.roles[role] ) {
+      if (user.roles[role]) {
         return true;
       }
     }

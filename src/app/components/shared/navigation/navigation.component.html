@@ -16,9 +16,9 @@
     <i class="material-icons">exit_to_app</i>
     {{ 'navigation.logout' | translate }}
   </a>
-  <a class="toolbar-item" mat-button routerLink="/admin">
+  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin">
     <i class="material-icons">store</i>
-    ADMIN ZONE
+    {{ 'navigation.admin_area' | translate }}
   </a>  
 </span>
 

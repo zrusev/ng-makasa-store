@@ -1,10 +1,7 @@
-import { Component, OnInit, DoCheck} from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthProvider } from 'ngx-auth-firebaseui';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { map, take, tap } from 'rxjs/operators';
-import { debug } from 'util';
-import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: 'app-account',
@@ -35,7 +32,8 @@ export class AccountComponent implements OnInit, DoCheck {
 
     this.authService.user$.subscribe((user) => {
       if (user && !user.roles && !event.emailVerified) {
-        this.authService.updateUserData(user);
+        const roles = { reader: true };
+        this.authService.updateUserData(user, roles);
       }
     });
   }

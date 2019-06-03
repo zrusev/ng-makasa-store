@@ -1,3 +1,11 @@
-<p>
+<h3>
   super secret zone!
-</p>
+</h3>
+<button *ngIf="authService.canEdit(user)"
+        (click)="editToDo()">
+  Edit ToDo
+</button>
+<button *ngIf="authService.canDelete(user)"
+        (click)="deleteToDo()">
+  Delete ToDo
+</button>
