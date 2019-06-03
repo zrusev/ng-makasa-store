@@ -1,6 +1,15 @@
 @import '~@angular/material/theming';
+@import './hkGrotesk.css';
 
-@include mat-core();
+$general-typography: mat-typography-config(
+  $font-family: 'hkgrotesk',
+);
+
+$secondary-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif'
+);
+
+@include mat-core($general-typography);
 
 $makasa-theme-primary: mat-palette($mat-lime);
 $makasa-theme-accent:  mat-palette($mat-pink, A200, A100, A400);
@@ -9,3 +18,4 @@ $makasa-theme-warn:    mat-palette($mat-red);
 $makasa-theme-theme: mat-light-theme($makasa-theme-primary, $makasa-theme-accent, $makasa-theme-warn);
 
 @include angular-material-theme($makasa-theme-theme);
+@include mat-toolbar-typography($secondary-typography);

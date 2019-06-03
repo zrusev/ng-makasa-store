@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'hkgrotesk';
+    font-style: normal;
+    src: url("/assets/font/HKGrotesk-Regular.woff") format("woff"),
+         url("/assets/font/HKGrotesk-Regular.woff2") format("woff2")
+}
+
+@font-face {
+    font-family: 'hkgrotesk';
+    font-style: bold;
+    src: url("/assets/font/HKGrotesk-Bold.woff") format("woff"),
+         url("/assets/font/HKGrotesk-Bold.woff2") format("woff2")
+}

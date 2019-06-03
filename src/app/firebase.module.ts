@@ -13,7 +13,10 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgxAuthFirebaseUIModule.forRoot(environment.firebase),
+    NgxAuthFirebaseUIModule.forRoot(
+      environment.firebase,
+      () => (environment.appName),
+      { authGuardFallbackURL: environment.authGuardFallbackURL }),
   ]
 })
 export class FirebaseModule { }
