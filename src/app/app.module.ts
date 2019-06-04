@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MaterialModule } from './material.module';
 import { FirebaseModule } from './firebase.module';
@@ -16,9 +16,8 @@ import { LanguageService } from './core/services/language.service';
 
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
-import { TranslateModule, TranslateModuleConfig, TranslateLoader, TranslateService } from '@ngx-translate/core';
-import { TranslateCacheModule, TranslateCacheConfig, TranslateCacheService, TranslateCacheSettings } from 'ngx-translate-cache';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateCacheModule } from 'ngx-translate-cache';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -29,28 +28,10 @@ import { AccountComponent } from './components/identity/account/account.componen
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
-
-import { cookieConfig } from './core/config/cookie.config';
 import { AdminComponent } from './components/identity/admin/admin.component';
 import { LanguageComponent } from './components/shared/language/language.component';
 
-const translateConfig: TranslateModuleConfig = {
-  loader: {
-    provide: TranslateLoader,
-    useFactory: (http: HttpClient) => (new TranslateHttpLoader(http, 'assets/i18n/', '.json')),
-    deps: [HttpClient]
-  }
-};
-
-const cookieCacheConfig: TranslateCacheConfig = {
-  cacheService: {
-      provide: TranslateCacheService,
-      useFactory: (translateService, translateCacheSettings) => (new TranslateCacheService(translateService, translateCacheSettings)),
-      deps: [ TranslateService, TranslateCacheSettings ]
-    },
-    cacheName: 'lang',
-    cacheMechanism: 'Cookie',
-};
+import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
 
 @NgModule({
   declarations: [
