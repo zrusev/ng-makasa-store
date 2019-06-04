@@ -28,9 +28,7 @@
               }
             ],
             "styles": [
-              {
-                "input": "src/makasa-theme.scss"
-              },
+              "src/makasa-theme.scss",
               "src/styles.css",
               "./node_modules/cookieconsent/build/cookieconsent.min.css"
             ],
@@ -91,9 +89,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              {
-                "input": "src/makasa-theme.scss"
-              },
+              "src/makasa-theme.scss",
               "src/styles.css",
               "./node_modules/cookieconsent/build/cookieconsent.min.css"
             ],

@@ -1,39 +1,35 @@
-<a class="toolbar-item" mat-button routerLink="/home">
-  {{ 'navigation.home' | translate }}
-</a>
-<a class="toolbar-item" mat-button routerLink="/about">
-  {{ 'navigation.about' | translate }}
-</a>
-<a class="toolbar-item" mat-button routerLink="/about">
-  {{ 'navigation.promotions' | translate }}
-</a>
-<a class="toolbar-item" mat-button routerLink="/about">
-  {{ 'navigation.gallery' | translate }}
-</a>
-<a class="toolbar-item" mat-button routerLink="/about">
-  {{ 'navigation.blog' | translate }}
-</a>
-<a class="toolbar-item" mat-button routerLink="/about">
-  {{ 'navigation.contacts' | translate }}
-</a>
-<span *ngIf="authService.user$ | async; else login">
-  <a class="toolbar-item" mat-button routerLink="/account/profile">
-    {{ 'navigation.profile' | translate }}
-  </a>
-  <a class="toolbar-item" mat-button (click)="logout()">
-    {{ 'navigation.logout' | translate }}
-  </a>
-  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin">
-    {{ 'navigation.admin_area' | translate }}
-  </a>  
-  <small class="toolbar-item">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
-</span>
-<a>
-  <app-language></app-language>
-</a>
-
-<ng-template #login>
-    <a class="toolbar-item" mat-button routerLink="/account">
-      {{ 'navigation.login_registration' | translate }}
+<div class="container">
+  <div class="logo">
+    MY LOGO HERE
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/home" color="primary">
+      {{ 'navigation.home' | translate }}
     </a>
-</ng-template>
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/about" color="primary">
+      {{ 'navigation.about' | translate }}
+    </a>
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/about" color="primary">
+      {{ 'navigation.promotions' | translate }}
+    </a>
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/about" color="primary">
+      {{ 'navigation.gallery' | translate }}
+    </a>
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/about" color="primary">
+      {{ 'navigation.blog' | translate }}
+    </a>
+  </div>
+  <div class="item">
+    <a mat-button routerLink="/about" color="primary">
+      {{ 'navigation.contacts' | translate }}
+    </a>
+  </div>
+</div>

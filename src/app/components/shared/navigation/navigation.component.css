@@ -1,3 +1,16 @@
-.toolbar-item {
-    color: white;
+.container {
+    display: flex;
+}
+
+.logo {
+    flex: 10;
+}
+
+.item {
+    display: block;
+    flex: 1;    
+}
+
+.item.a {
+    width: 100%;
 }

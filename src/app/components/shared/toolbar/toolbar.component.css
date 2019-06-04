@@ -2,6 +2,16 @@
     cursor: pointer;
 }
 
-.order {
+mat-toolbar-row {
+    display: flex;
+    align-items: flex-start;
     justify-content: flex-end;
+}
+
+mat-toolbar-row.menu {
+    justify-content: flex-start;
+}
+
+.navigation {
+    width: 100%;
 }

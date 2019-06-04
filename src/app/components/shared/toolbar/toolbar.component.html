@@ -1,11 +1,15 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div fxShow="true" fxHide.gt-sm="true">
-      <a class="menu-item" (click)="toggleSidenav()">
-        <i class="material-icons">menu</i>
-      </a>
-    </div>
-    <div class="order" fxShow="true" fxHide.lt-md="true">                    
-      <app-navigation></app-navigation>
-    </div>
-</mat-toolbar-row>
+<mat-toolbar>
+  <mat-toolbar-row class="menu" fxShow="true" fxHide.gt-sm="true">
+    <a class="menu-item" (click)="toggleSidenav()">
+      <i class="material-icons">menu</i>
+    </a>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row fxShow="true" fxHide.lt-md="true">
+    <app-auth-bar></app-auth-bar>
+  </mat-toolbar-row>  
+  
+  <mat-toolbar-row fxShow="true" fxHide.lt-md="true">
+    <app-navigation class="navigation"></app-navigation>
+  </mat-toolbar-row>
+</mat-toolbar>

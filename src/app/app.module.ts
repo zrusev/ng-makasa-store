@@ -32,6 +32,7 @@ import { AdminComponent } from './components/identity/admin/admin.component';
 import { LanguageComponent } from './components/shared/language/language.component';
 
 import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
+import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/
     MenuComponent,
     NavigationComponent,
     AdminComponent,
-    LanguageComponent
+    LanguageComponent,
+    AuthBarComponent
   ],
   imports: [
     BrowserModule,
