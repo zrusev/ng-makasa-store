@@ -1,6 +1,6 @@
 <section>
     <div class="container">
-      <mat-carousel
+      <!-- <mat-carousel
         timings="250ms ease-in"
         [autoplay]="true"
         interval="5000"
@@ -22,7 +22,15 @@
           overlayColor="#00000040"
           [hideOverlay]="false"
         ></mat-carousel-slide>
-      </mat-carousel>
+      </mat-carousel> -->
+
+      <div class="image-div">
+        <div class="text-left" [innerHTML]="'navigation.home_title' | translate"></div>
+        <img src="../../../assets/home/big leaf.png" alt="home">      
+        <div class="bottom-left">
+          <button mat-raised-button color="primary">{{ 'navigation.check_on_map' | translate }}</button>
+        </div>
+      </div>
     </div>
 
 </section>

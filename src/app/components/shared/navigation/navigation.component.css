@@ -1,16 +1,33 @@
 .container {
     display: flex;
+    align-items: flex-end;
 }
 
 .logo {
-    flex: 10;
+    flex: 3;
+}
+
+.titles {
+    flex: 3;
+}
+
+.logo > a > img {
+    height: auto;
+    width: 150px;
+    margin-left: 50px;
 }
 
 .item {
-    display: block;
+    display: flex;
     flex: 1;    
 }
 
-.item.a {
+.item > a {
     width: 100%;
+    height: auto;
+}
+
+.social {
+    width: 50%;
+    height: auto;
 }

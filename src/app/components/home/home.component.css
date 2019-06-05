@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.container > div {
+    margin-top: 10%;
+}
+
+.text-left {
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    color: #cddc39;
+    font-size: x-large;
+}
+
+.bottom-left {
+    position: absolute;
+    top: 25%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-left > button {
+    position: absolute;
+    color: white;
+}
+
+.image-div {
+    position: relative;
+}
