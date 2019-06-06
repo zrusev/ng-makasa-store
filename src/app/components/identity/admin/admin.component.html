@@ -1,11 +1,15 @@
-<h3>
-  super secret zone!
-</h3>
-<button *ngIf="authService.canEdit(user)"
-        (click)="editToDo()">
-  Edit ToDo
-</button>
-<button *ngIf="authService.canDelete(user)"
-        (click)="deleteToDo()">
-  Delete ToDo
-</button>
+<div class="container">
+  <div class="dropzone" 
+      appDropzone
+      (hovered)="toggleHover($event)"
+      (dropped)="onDrop($event)"
+      [class.hovering]="isHovering">
+      
+    <h3>Drop Zone</h3>
+    <p>Drag and Drop a File</p>
+  </div>
+  <div class="files-container" *ngFor="let file of files">
+      <app-upload-task [file]="file"></app-upload-task>
+  </div>
+</div>
+

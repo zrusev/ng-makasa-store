@@ -9,6 +9,8 @@ import { AuthService } from 'src/app/core/services/auth.service';
 })
 export class AdminComponent {
   user: User;
+  isHovering: boolean;
+  files: File[] = [];
 
   constructor(public authService: AuthService) {
     this.authService.user$.subscribe(user => this.user = user);
@@ -27,6 +29,16 @@ export class AdminComponent {
       console.error('deleted!');
     } else {
       console.error('you are not allowed to do that!');
+    }
+  }
+
+  toggleHover(event: boolean) {
+    this.isHovering = event;
+  }
+
+  onDrop(files: FileList) {
+    for (let i = 0; i < files.length; i++) {
+      this.files.push(files.item(i));
     }
   }
 }

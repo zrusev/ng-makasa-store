@@ -33,6 +33,8 @@ import { LanguageComponent } from './components/shared/language/language.compone
 
 import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
 import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
+import { DropzoneDirective } from './core/directives/dropzone.directive';
+import { UploadTaskComponent } from './components/identity/upload-task/upload-task.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.componen
     NavigationComponent,
     AdminComponent,
     LanguageComponent,
-    AuthBarComponent
+    AuthBarComponent,
+    DropzoneDirective,
+    UploadTaskComponent
   ],
   imports: [
     BrowserModule,

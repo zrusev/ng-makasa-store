@@ -1,5 +1,5 @@
-.menu-item {
-    cursor: pointer;
+mat-toolbar {
+    background-color: transparent;
 }
 
 mat-toolbar-row {
@@ -10,6 +10,10 @@ mat-toolbar-row {
 
 mat-toolbar-row.menu {
     justify-content: flex-start;
+}
+
+.menu-item {
+    cursor: pointer;
 }
 
 .navigation {

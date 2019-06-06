@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
@@ -16,6 +17,7 @@ export function config() {
     CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     AngularFireAuthModule,
     NgxAuthFirebaseUIModule.forRoot(
       environment.firebase,
