@@ -5,7 +5,6 @@ import { HomeComponent } from './components/home/home.component';
 import { AccountComponent } from './components/identity/account/account.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { LoggedInGuard } from 'ngx-auth-firebaseui';
-import { AdminComponent } from './components/identity/admin/admin.component';
 import { AdminGuard } from './core/guards/admin.guard';
 
 const routes: Routes = [
@@ -14,7 +13,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'account', component: AccountComponent },
   { path: 'account/profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
-  { path: 'admin', component: AdminComponent, canActivate: [LoggedInGuard, AdminGuard] },
+  { path: 'admin', loadChildren: './components/admin/admin.module#AdminModule',
+    canActivate: [LoggedInGuard],
+    canLoad: [AdminGuard] },
   { path: '**', redirectTo: '/home'}
 ];
 

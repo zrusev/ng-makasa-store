@@ -18,6 +18,7 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateCacheModule } from 'ngx-translate-cache';
+import { SharedModule } from './components/shared/shared.module';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -28,13 +29,10 @@ import { AccountComponent } from './components/identity/account/account.componen
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
-import { AdminComponent } from './components/identity/admin/admin.component';
 import { LanguageComponent } from './components/shared/language/language.component';
 
 import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
 import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
-import { DropzoneDirective } from './core/directives/dropzone.directive';
-import { UploadTaskComponent } from './components/identity/upload-task/upload-task.component';
 
 @NgModule({
   declarations: [
@@ -47,17 +45,15 @@ import { UploadTaskComponent } from './components/identity/upload-task/upload-ta
     ProfileComponent,
     MenuComponent,
     NavigationComponent,
-    AdminComponent,
     LanguageComponent,
     AuthBarComponent,
-    DropzoneDirective,
-    UploadTaskComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    SharedModule,
     FormsModule,
     FlexLayoutModule,
     MaterialModule,

@@ -5,7 +5,7 @@
   <a class="toolbar-item" mat-button (click)="logout()" color="primary">
     {{ 'navigation.logout' | translate }}
   </a>
-  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin" color="primary">
+  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin/home" color="primary">
     {{ 'navigation.admin_area' | translate }}
   </a>  
   <small class="toolbar-item" color="primary">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
