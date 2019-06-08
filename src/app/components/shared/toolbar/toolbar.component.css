@@ -4,18 +4,29 @@ mat-toolbar {
 
 mat-toolbar-row {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-end;
 }
 
 mat-toolbar-row.menu {
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 .menu-item {
     cursor: pointer;
+    flex: 3;
 }
 
 .navigation {
     width: 100%;
+}
+
+.logo {
+    flex: 1;
+
+}
+
+.logo > a > img {
+    height: auto;
+    width: 90%;
 }
