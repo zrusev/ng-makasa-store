@@ -1,19 +1,10 @@
-<mat-tab-group>
+<mat-tab-group [selectedIndex]="index">
     <mat-tab label="{{ 'about.about' | translate }}"> 
       <span [innerHTML]="'about.text' | translate"></span>
     </mat-tab>
     <mat-tab label="{{ 'about.contacts' | translate }}">
       <p>TBA: GOOGLE MAP POSITION</p>
     </mat-tab>
-    <mat-tab label="{{ 'about.suppliers' | translate }}">
-        <mat-list role="list">
-            <mat-list-item role="listitem">Item 1</mat-list-item>
-            <mat-list-item role="listitem">Item 2</mat-list-item>
-            <mat-list-item role="listitem">Item 3</mat-list-item>
-            <mat-list-item role="listitem">Item 4</mat-list-item>
-            <mat-list-item role="listitem">Item 5</mat-list-item>
-            <mat-list-item role="listitem">Item 6</mat-list-item>
-            <mat-list-item role="listitem">Item 7</mat-list-item>
-          </mat-list>
+    <mat-tab label="{{ 'about.gallery' | translate }}">
     </mat-tab>
 </mat-tab-group>

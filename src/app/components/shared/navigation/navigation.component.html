@@ -11,28 +11,28 @@
       </a>
     </div>
     <div class="item">
-      <a mat-button routerLink="/about" color="primary">
+      <a mat-button routerLink="/about" color="primary" (click)="navigate(0)">
         {{ 'navigation.about' | translate }}
       </a>
     </div>
     <div class="item">
-      <a mat-button routerLink="/about" color="primary">
+        <a mat-button routerLink="/about" color="primary" (click)="navigate(1)">
+          {{ 'navigation.contacts' | translate }}
+        </a>
+    </div>
+    <div class="item">
+        <a mat-button routerLink="/about" color="primary" (click)="navigate(2)">
+          {{ 'navigation.gallery' | translate }}
+        </a>
+    </div>        
+    <div class="item">
+      <a mat-button routerLink="/home" color="primary">
         {{ 'navigation.promotions' | translate }}
       </a>
     </div>
     <div class="item">
-      <a mat-button routerLink="/about" color="primary">
-        {{ 'navigation.gallery' | translate }}
-      </a>
-    </div>
-    <div class="item">
-      <a mat-button routerLink="/about" color="primary">
+      <a mat-button routerLink="/home" color="primary">
         {{ 'navigation.blog' | translate }}
-      </a>
-    </div>
-    <div class="item">
-      <a mat-button routerLink="/about" color="primary">
-        {{ 'navigation.contacts' | translate }}
       </a>
     </div>
     <div class="item">
