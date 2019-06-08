@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { NavigationService } from 'src/app/core/services/navigation.service';
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,14 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
+    private navigationService: NavigationService,
     public authService: AuthService) { }
 
   ngOnInit() {
     this.slides$ = this.http.get<string[]>('../../../assets/images.json', { responseType: 'json' });
+  }
+
+  navigate(index: Number) {
+    this.navigationService.changeIndex(index);
   }
 }

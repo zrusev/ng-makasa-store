@@ -19,6 +19,7 @@ import { NgcCookieConsentModule } from 'ngx-cookieconsent';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateCacheModule } from 'ngx-translate-cache';
 import { SharedModule } from './components/shared/shared.module';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -31,8 +32,9 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { LanguageComponent } from './components/shared/language/language.component';
 
-import { cookieConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
+import { cookieConfig, cookieCacheConfig, translateConfig, agmConfig } from './core/config/index.config';
 import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
+import { LocationComponent } from './components/location/location.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.componen
     NavigationComponent,
     LanguageComponent,
     AuthBarComponent,
+    LocationComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +65,7 @@ import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.componen
     NgcCookieConsentModule.forRoot(cookieConfig),
     TranslateModule.forRoot(translateConfig),
     TranslateCacheModule.forRoot(cookieCacheConfig),
+    AgmCoreModule.forRoot(agmConfig),
   ],
   providers: [
     AuthService,

@@ -18,4 +18,4 @@
 - GDPR consent implementation
 - Routing modules. Authentication guards. Lazy loading on the administative part
 - Custom directive. Upload multiple files to storage as part of the administative part
-- Google Maps implementation - TBA
+- Google Maps implementation

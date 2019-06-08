@@ -3,7 +3,9 @@
       <span [innerHTML]="'about.text' | translate"></span>
     </mat-tab>
     <mat-tab label="{{ 'about.contacts' | translate }}">
-      <p>TBA: GOOGLE MAP POSITION</p>
+      <div class="location">
+        <app-location></app-location>
+      </div>
     </mat-tab>
     <mat-tab label="{{ 'about.gallery' | translate }}">
     </mat-tab>
