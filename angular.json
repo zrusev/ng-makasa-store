@@ -29,6 +29,7 @@
             ],
             "styles": [
               "src/makasa-theme.scss",
+              "src/media.css",
               "src/styles.css",
               "./node_modules/cookieconsent/build/cookieconsent.min.css"
             ],
@@ -90,6 +91,7 @@
             "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/makasa-theme.scss",
+              "src/media.css",
               "src/styles.css",
               "./node_modules/cookieconsent/build/cookieconsent.min.css"
             ],
