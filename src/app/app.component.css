@@ -2,3 +2,7 @@
     margin-top: 0%;
     padding-top: 0%;
 }
+
+mat-sidenav-container {
+    background:#F8F7F5;
+}

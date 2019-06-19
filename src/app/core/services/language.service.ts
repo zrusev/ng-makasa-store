@@ -30,7 +30,7 @@ export class LanguageService {
         return [
             {text: 'БГ', value: 'bg'},
             {text: 'EN', value: 'en'}
-        ]
+        ];
     }
 
     setLanguage(lng) {
