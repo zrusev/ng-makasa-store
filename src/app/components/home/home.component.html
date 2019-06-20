@@ -1,6 +1,6 @@
 <!-- <section>
     <div class="container"> -->
-      <!-- <mat-carousel
+<!-- <mat-carousel
         timings="250ms ease-in"
         [autoplay]="true"
         interval="5000"
@@ -28,12 +28,13 @@
 <div class="home-container">
   <div class="welcome-container">
     <section class="title">
-    <div [innerHTML]="'navigation.home_title' | translate"></div>
-    <button mat-raised-button class="map" color="primary" routerLink="/about" (click)="navigate(1)">{{ 'navigation.check_on_map' | translate }}</button>
-  </section>
-  <section class="image">
+      <div [innerHTML]="'navigation.home_title' | translate"></div>
+      <button mat-raised-button class="map" color="primary" routerLink="/about"
+        (click)="navigate(1)">{{ 'navigation.check_on_map' | translate }}</button>
+    </section>
+    <section class="image">
       <img src="../../../assets/home/big leaf.png" alt="">
-  </section>
+    </section>
   </div>
   <div class="title">
     <h3>{{ 'navigation.home_about' | translate }}</h3>
@@ -41,12 +42,12 @@
   <div class="about-container">
     <section class="about">
       <section class="bottle">
-            <img src="../../../assets/home/dispenser bottle.png" alt="">
-          </section>
-          <section class="about-text">
-            <p>{{ 'navigation.about_text' | translate }}</p>
-            <p><i>{{ 'navigation.read_more' | translate }}</i></p>
-          </section>
+        <img src="../../../assets/home/dispenser bottle.png" alt="">
+      </section>
+      <section class="about-text">
+        <p>{{ 'navigation.about_text' | translate }}</p>
+        <p><i>{{ 'navigation.read_more' | translate }}</i></p>
+      </section>
     </section>
     <section class="image">
       <img src="../../../assets/home/Image-Makasa.png" alt="">
@@ -66,15 +67,15 @@
   </div>
   <section class="promotions">
     <div class="promotions-item">
-        <img src="../../../assets/home/IMG_20190531_095022.jpg" alt="">
-        <div class="promotion-title" [innerHTML]="'navigation.promotion_one' | translate">
-        </div>
+      <img src="../../../assets/home/IMG_20190531_095022.jpg" alt="">
+      <div class="promotion-title" [innerHTML]="'navigation.promotion_one' | translate">
+      </div>
     </div>
     <div class="promotions-item">
       <img src="../../../assets/home/60311901_817884938575212_7793732906127458304_o.jpg" alt="">
-        <div class="promotion-title" [innerHTML]="'navigation.promotion_two' | translate">
-        </div>
+      <div class="promotion-title" [innerHTML]="'navigation.promotion_two' | translate">
       </div>
+    </div>
   </section>
   <div class="flower">
     <img src="../../../assets/home/succulent.png" alt="">
@@ -82,17 +83,16 @@
   <div class="title">
     <h3>{{ 'navigation.home_blog' | translate }}</h3>
   </div>
-  <div class="about-container">
-    <section class="image blog">
-        <img src="../../../assets/home/background-beverage-break-958165.jpg" alt="">
+  <div class="blog">
+    <section class="image">
+      <img src="../../../assets/home/background-beverage-break-958165.jpg" alt="">
     </section>
-    <section class="about blog">
-        <section class="about-text blog" [innerHTML]="'navigation.home_description' | translate">
-            <p><i>{{ 'navigation.read_more' | translate }}</i></p>
-        </section>
-        <section class="bottle blog">
-            <img src="../../../assets/home/Depositphotos_168110230_xl-2015.jpg" alt="">
-        </section>
-      </section>    
+    <section class="description">
+      <div [innerHTML]="'navigation.home_description' | translate"></div>
+      <p><i>{{ 'navigation.read_more' | translate }}</i></p>
+    </section>
+    <section class="olive">
+      <img src="../../../assets/home/Depositphotos_168110230_xl-2015.jpg" alt="">
+    </section>
   </div>
 </div>

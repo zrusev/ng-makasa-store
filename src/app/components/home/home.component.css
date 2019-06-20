@@ -50,12 +50,12 @@
 }
 
 .about-container section.about section.bottle {
-    width: 30%;
+    width: 25%;
     height: auto;
 }
 
 .about-container section.about section.bottle img {
-    margin: -30em 0 0 0;
+    margin: -25em 0 0 0;
     max-width: 100%;
     position: relative;
 }
@@ -79,6 +79,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 1em 8em 1em 1em;
     max-width: 500px;
 }
 
@@ -126,29 +127,48 @@ div.flower img {
     width: 75%;
 }
 
-.about-container section.about.blog section.bottle.blog img {
-    margin: -15em 0 0 0;
-    position: relative;
-}
-
-.about-container section.about.blog section.bottle.blog {
-    max-width: 19em;
-    width: auto;
-    height: auto;
-}
-
 .about-text.blog {
     margin: 0 1em 0 1em;
     padding-left: 1em;
 }
 
-.about-container section.image.blog {
-    width: 50%;
+.blog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20em;
+}
+
+.blog section.image {
+    width: 50em;
     height: auto;
 }
 
-.about-container section.about.blog {
-    width: 50%;
+.blog section.image img {
+    max-width: 100%;
+}
+
+.blog section.description {
+    width: 25em;
     height: auto;
-    background-color: #fff;
+    margin: 3em 0 4em -3em;
+    padding-left: 4em;
+    padding-right: 1em;
+    flex-grow: 1;
+    background: #fff;
+    opacity: 0.8;
+}
+
+.blog section.description p {
+    max-width: 100%;
+}
+
+.blog section.olive {
+    width: 25em;
+    height: auto;
+    margin: -4.5em 0 3.5em 0;
+}
+
+.blog section.olive img {
+    max-width: 100%;
 }
