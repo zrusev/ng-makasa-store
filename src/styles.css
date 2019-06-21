@@ -1,4 +1,4 @@
-* {
+*, *:before, *:after {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -8,11 +8,12 @@ body, table, form, input, select, option {
     font: inherit;
 }
 
-p {margin-bottom: 1.25em;}
+p {
+  margin-bottom: 1em;
+}
 
 h1, h2, h3, h4, h5 {
   margin: 2.75rem 0 1rem;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 0.15;
 }
@@ -30,4 +31,7 @@ h4 {font-size: 1.44em;}
 
 h5 {font-size: 1.2em;}
 
-small, .text_small {font-size: 0.8em;}
+small,
+.text_small {
+  font-size: 0.8em;
+}

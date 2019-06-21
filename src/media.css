@@ -1,21 +1,21 @@
 /* #### Mobile Phones Portrait #### */
 @media screen and (max-device-width: 480px) and (orientation: portrait){
     html {
-        font: 6px/1 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: 6px/1 'HKGrotesk', sans-serif;
     }
 }
  
  /* #### Mobile Phones Landscape #### */
  @media screen and (max-device-width: 640px) and (orientation: landscape){
     html {
-        font: 8px/1 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: 6px/1 'HKGrotesk', sans-serif;
     }
 }
  
  /* #### Mobile Phones Portrait or Landscape #### */
  @media screen and (max-device-width: 640px){
     html {
-        font: 8px/1 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: 6px/1 'HKGrotesk', sans-serif;
     }
 }
  
@@ -31,19 +31,20 @@
  
  /* #### iPhone 6 and 6 plus Portrait or Landscape #### */
  @media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3){
-   /* some CSS here */
+    html {
+        font: 8px/1 'HKGrotesk', sans-serif;
+    }
 }
  
- /* #### Tablets Portrait or Landscape #### */
- @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
+@media screen and (min-device-width: 640px) and (max-device-width: 779px){
     html {
-        font: 16px/1.5 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: 10px/1.5 'HKGrotesk', sans-serif;
     }
 }
  
  /* #### Desktops #### */
  @media screen and (min-width: 1024px){
     html {
-        font: 16px/1.5 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font: 16px/1.5 'HKGrotesk', sans-serif;
     }    
 }

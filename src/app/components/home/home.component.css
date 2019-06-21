@@ -3,11 +3,16 @@
     color: #6B7D41;
 }
 
+.title {
+    text-align: center;
+    margin: 5em 1em 3em 1em;
+}
+
 .welcome-container {
     display: flex;
     flex-direction: column;
-    max-width: 80em;
-    margin: 1em 0 0 auto;
+    max-width: 75em;
+    margin: 1em 0 1em auto;
     overflow: hidden;
 }
 
@@ -19,7 +24,7 @@
 }
 
 .welcome-container section.title button.map {
-    margin-top: 7em;
+    margin-top: 2em;
     background: #AEC543;
     color: #fff;
 }
@@ -27,69 +32,67 @@
 .welcome-container section.image {
     width: 100%;
     height: auto;
-    padding-left: 20em;
+    padding-left: 10em;
 }
 
 .welcome-container section.image img {
     max-width: 100%;
+    display: block;
+    left: 1em;
+    position: relative;
+    bottom: 5em;
 }
 
 .about-container {
     display: flex;
-    flex-direction: row;
-    margin-bottom: 7em;
+    margin-bottom: 20em;
 }
 
-.about-container section.about {
-    display: -webkit-box;
-    width: 75%;
-    height: auto;
-    background-color: #EFF0E8;
-    max-height: 25em;
-    margin-top: 3em;
-}
-
-.about-container section.about section.bottle {
-    width: 25%;
-    height: auto;
-}
-
-.about-container section.about section.bottle img {
-    margin: -25em 0 0 0;
-    max-width: 100%;
+.about-container section.bottle {
+    max-width: 20em;
     position: relative;
+    width: 20%;
+    background-color: #EFF0E8;
+    margin: 2em 0 2em 0;
 }
 
-.about-container section.image {
+.about-container section.bottle img {
     width: 70%;
-    height: auto;
+    position: absolute;
+    bottom: 2em;
 }
 
-.about-container section.image img {
-    max-width: 100%;
-    background-size: cover;
+.about-container section.front {
+    max-width: 50%;
 }
 
-.title {
-    text-align: center;
-    margin: 5em 1em 3em 1em;
+.about-container section.front img {
+    width: 100%;
+    display: block;
 }
 
-.about-text {
+.about-container section.about-text {
+    max-width: 30%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 1em 8em 1em 1em;
-    max-width: 500px;
+    background-color: #EFF0E8;
+    padding: 0 1em 0 1em;
+    margin: 2em 0 2em 0;
+}
+
+.about-container section.about-text img {
+    width: 100%;
 }
 
 section.brands {
     display: flex;
     flex-direction: row;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: baseline;
-    margin-bottom: 20em;
+    margin: 0 10% 20em 10%;
 }
 
 section.brands img {
@@ -140,7 +143,7 @@ div.flower img {
 }
 
 .blog section.image {
-    width: 50em;
+    width: 50%;
     height: auto;
 }
 
@@ -149,7 +152,7 @@ div.flower img {
 }
 
 .blog section.description {
-    width: 25em;
+    width: 25%;
     height: auto;
     margin: 3em 0 4em -3em;
     padding-left: 4em;
@@ -164,7 +167,7 @@ div.flower img {
 }
 
 .blog section.olive {
-    width: 25em;
+    width: 25%;
     height: auto;
     margin: -4.5em 0 3.5em 0;
 }

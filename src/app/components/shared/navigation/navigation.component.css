@@ -14,12 +14,12 @@
 .logo > a > img {
     height: auto;
     width: 150px;
-    margin-left: 50px;
+    margin-left: 8em;
 }
 
 .item {
     display: flex;
-    flex: 1;    
+    flex: 1;
 }
 
 .item > a {
