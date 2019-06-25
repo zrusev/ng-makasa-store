@@ -5,17 +5,24 @@ import { UploadTaskComponent } from './upload-task/upload-task.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { MaterialModule } from 'src/app/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { CreatePromotionComponent } from './promotions/create-promotion/create-promotion.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChipsInputComponent } from './chips-input/chips-input.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     UploadTaskComponent,
+    CreatePromotionComponent,
+    ChipsInputComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MaterialModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class AdminModule { }

@@ -3,7 +3,7 @@
   <a class="toolbar-item" mat-button routerLink="/account/profile" color="primary">
     {{ 'navigation.profile' | translate }}
   </a>
-  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin/home" color="primary">
+  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin/create" color="primary">
     {{ 'navigation.admin_area' | translate }}
   </a>  
   <a class="toolbar-item" mat-button (click)="logout()" color="primary">
