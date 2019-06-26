@@ -1,0 +1,20 @@
+<div class="container">
+  <mat-card *ngFor="let promotion of promotions">
+      <mat-card-header>
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of promotion.tags">#{{ tag.name }}</mat-chip>
+        </mat-chip-list>
+      </mat-card-header>
+      <div class="media ar-1x1">
+        <img src="{{promotion.images[0].url}}" alt="mountain">
+      </div>
+      <mat-card-content>
+        <p>{{ promotion.description | slice:0:50 }}...</p>
+        <p>read more >></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button> -->
+      </mat-card-actions>
+    </mat-card>
+</div>

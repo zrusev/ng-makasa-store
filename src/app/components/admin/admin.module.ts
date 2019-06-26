@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CreatePromotionComponent } from './promotions/create-promotion/create-promotion.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChipsInputComponent } from './chips-input/chips-input.component';
+import { ListPromotionComponent } from './promotions/list-promotion/list-promotion.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { ChipsInputComponent } from './chips-input/chips-input.component';
     UploadTaskComponent,
     CreatePromotionComponent,
     ChipsInputComponent,
+    ListPromotionComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,77 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1;
+}
+
+.mat-card {
+    width: 30vw;
+    margin: 1em 1em 1em 1em;
+}
+
+.media {
+    background: #666;
+    width: 20vw;
+    position: relative;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 0.5em;
+    border: 1px solid #fff;
+    box-shadow: 0 0 1rem 0 rgb(0, 0, 0, 0.2);
+}
+
+.media:after,
+.media:before {
+    display: block;
+    content: '';
+}
+
+.media.ar-9x16:before {    
+    padding-top: 56.25%;
+}
+
+.media.ar-16x9:before {    
+    padding-top: 177.77%;
+}
+
+.media.ar-1x1:before {    
+    padding-top: 100%;
+}
+
+.media:after {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    transition: opacity 0.2s ease-in; 
+}
+
+.media:hover:after {
+    opacity: 0;
+}
+
+.media img {
+    display: block;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.media.ar-9x16 img {
+    width: 100%;
+    height: auto;
+}
+
+.media.ar-16x9 img {
+    width: auto;
+    height: 100%;
+}
+
+.media.ar-1x1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.mat-chip {
+    color: #fff;
+    background: #6B7D41;
+}
