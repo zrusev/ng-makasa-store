@@ -8,7 +8,23 @@
          <label for="description">Description</label>
          <textarea class="form-control" type="text" id="description" formControlName="description"></textarea>
       </div>
-      <button class="btn btn-primary btn-block" [disabled]="!form.valid">Create</button>
+      <div class="form-group">
+          <div class="drop-container">
+              <div class="dropzone" 
+                  appDropzone
+                  (hovered)="toggleHover($event)"
+                  (dropped)="onDrop($event)"
+                  [class.hovering]="isHovering">
+                  
+                <h3>Drop Zone</h3>
+                <p>Drag and Drop a File</p>
+              </div>
+              <div class="files-container" *ngFor="let file of files">
+                  <app-upload-task [file]="file" (imageEmitter)="getImages($event)"></app-upload-task>
+            </div>
+          </div>            
+      </div>
+      <button mat-raised-button color="primary" [disabled]="!form.valid">Create</button>
     </form>
   </div>
 </div>

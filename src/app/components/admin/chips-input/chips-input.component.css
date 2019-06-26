@@ -1,3 +1,9 @@
-.example-chip-list {
+.chip-list {
     width: 100%;
+    padding-top: 1em;
+}
+
+.mat-chip {
+    color: #fff;
+    background: #6B7D41;
 }
