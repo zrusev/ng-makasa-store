@@ -18,13 +18,13 @@ export class PromotionService implements OnDestroy {
     addPromotion(payload: CreatePromotion) {
         this.afDb.collection<CreatePromotion>('promotions').add(payload)
         .then((data) => {
-                console.log(data);
-                this.router.navigate(['/']);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-        }
+            console.log(data);
+            this.router.navigate(['/']);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
 
     ngOnDestroy() {
 

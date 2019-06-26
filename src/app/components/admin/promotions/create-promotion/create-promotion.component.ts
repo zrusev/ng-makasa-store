@@ -5,6 +5,7 @@ import { Tag } from 'src/app/core/models/tag';
 import { User } from 'src/app/core/models/user';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { Image } from 'src/app/core/models/image';
+import { CreatePromotion } from 'src/app/core/models/create-promotion';
 
 @Component({
   selector: 'app-create-promotion',
@@ -35,9 +36,11 @@ export class CreatePromotionComponent implements OnInit {
 
   createPromotion() {
     if (this.authService.canEdit(this.user)) {
-      this.promotionService.addPromotion(Object.assign(this.form.value,
+      const promotion: CreatePromotion = Object.assign(this.form.value,
                                                       {tags: this.tags},
-                                                      {images: this.images}));
+                                                      {images: this.images},
+                                                      {createdOn: new Date()});
+      this.promotionService.addPromotion(promotion);
     } else {
       console.error('you are not allowed to do that!');
     }
@@ -60,4 +63,6 @@ export class CreatePromotionComponent implements OnInit {
       this.files.push(files.item(i));
     }
   }
+
+  get uploads() { return !!this.images.length; }
 }
