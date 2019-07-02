@@ -1,12 +1,12 @@
-<span *ngIf="authService.user$ | async; else login" color="primary">
+<span *ngIf="authService.user$ | async; else login">
   <small class="toolbar-item" color="primary">{{ 'profile.greeting' | translate:{'name': (authService.user$ | async)?.displayName} }}</small>
-  <a class="toolbar-item" mat-button routerLink="/account/profile" color="primary">
+  <a class="toolbar-item" mat-button routerLink="/account/profile">
     {{ 'navigation.profile' | translate }}
   </a>
-  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin/home" color="primary">
+  <a *ngIf="isAdmin" class="toolbar-item" mat-button routerLink="/admin/home">
     {{ 'navigation.admin_area' | translate }}
   </a>  
-  <a class="toolbar-item" mat-button (click)="logout()" color="primary">
+  <a class="toolbar-item" mat-button (click)="logout()">
     {{ 'navigation.logout' | translate }}
   </a>
 </span>
@@ -15,7 +15,7 @@
 </a>
 
 <ng-template #login>
-      <a class="toolbar-item" mat-button routerLink="/account" color="primary">
+      <a class="toolbar-item" mat-button routerLink="/account">
         {{ 'navigation.login_registration' | translate }}
       </a>
 </ng-template>

@@ -1,3 +1,22 @@
 <footer>
-  <div>{{currentYear}} &#169; {{ 'entity_name' | translate }}</div>
+  <div class="contacts">
+    <div>
+      <h5><b>{{ 'footer.entity_name' | translate }}</b></h5>
+      <p>{{ 'footer.address' | translate }}</p>
+      <p>{{ 'footer.city' | translate }}</p>
+    </div>
+    <div>
+      <h5><b>{{ 'footer.contacts' | translate }}</b></h5>
+      <p>{{ 'footer.phone' | translate }}</p>
+      <p>{{ 'footer.email' | translate }}</p>
+    </div>
+    <div>
+      <h5><b>{{ 'footer.schedule' | translate }}</b></h5>
+      <p>{{ 'footer.working_days' | translate }}</p>
+      <P>{{ 'footer.holidays' | translate }}</P>
+    </div>
+  </div>
+  <div class="year">
+    <p><b>{{currentYear}} &#169; {{ 'entity_name' | translate }}</b></p>
+  </div>
 </footer>

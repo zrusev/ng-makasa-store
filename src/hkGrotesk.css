@@ -6,7 +6,7 @@
 }
 
 @font-face {
-    font-family: 'hkgrotesk';
+    font-family: 'hkgrotesk-bold';
     font-style: bold;
     src: url("/assets/font/HKGrotesk-Bold.woff") format("woff"),
          url("/assets/font/HKGrotesk-Bold.woff2") format("woff2")

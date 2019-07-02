@@ -12,9 +12,9 @@
 }
 
 .logo > a > img {
+    width: 10em;
     height: auto;
-    width: 150px;
-    margin-left: 8em;
+    margin-left: 6em;
 }
 
 .item {
@@ -25,9 +25,9 @@
 .item > a {
     width: 100%;
     height: auto;
+    color: #544C4A;
 }
 
-.social {
-    width: 30%;
-    height: auto;
+h5 {
+    font-family: 'HKGrotesk';
 }

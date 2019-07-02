@@ -1,14 +1,14 @@
-mat-toolbar {
+.mat-toolbar {
     background-color: transparent;
 }
 
-mat-toolbar-row {
+.mat-toolbar-row {
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
-mat-toolbar-row.menu {
+.mat-toolbar-row.menu {
     justify-content: space-between;
 }
 

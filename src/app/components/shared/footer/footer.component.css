@@ -1,8 +1,13 @@
-footer {
-    display: flex;
-    flex-direction: column; 
-    text-align: center;
-    justify-content: center;
-    margin-top: 10px;
+.contacts {
+    display: flex; 
+    text-align: left;
+    justify-content: space-evenly;
+    align-items: baseline;
     background-color: transparent;
+}
+
+.year {
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 2em 0;
 }

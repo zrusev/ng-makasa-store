@@ -15,14 +15,17 @@ export function config() {
   declarations: [],
   imports: [
     CommonModule,
-    AngularFireModule.initializeApp(environment.firebase),
+  AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
     NgxAuthFirebaseUIModule.forRoot(
       environment.firebase,
       config,
-      { authGuardFallbackURL: environment.authGuardFallbackURL }),
+      {
+        enableFirestoreSync: true,
+        authGuardFallbackURL: environment.authGuardFallbackURL
+      }),
   ]
 })
 export class FirebaseModule { }
