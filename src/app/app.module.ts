@@ -4,20 +4,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MaterialModule } from './material.module';
-import { FirebaseModule } from './firebase.module';
-
-import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AuthService } from './core/services/auth.service';
-import { LanguageService } from './core/services/language.service';
+import { FirebaseModule } from './firebase.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateCacheModule } from 'ngx-translate-cache';
 
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
-import { TranslateModule } from '@ngx-translate/core';
-import { TranslateCacheModule } from 'ngx-translate-cache';
+
 import { SharedModule } from './components/shared/shared.module';
 import { AgmCoreModule } from '@agm/core';
 
@@ -30,11 +26,12 @@ import { AccountComponent } from './components/identity/account/account.componen
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
-import { LanguageComponent } from './components/shared/language/language.component';
-
-import { cookieConfig, cookieCacheConfig, translateConfig, agmConfig } from './core/config/index.config';
-import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
 import { LocationComponent } from './components/location/location.component';
+import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
+
+import { AuthService } from './core/services/auth.service';
+
+import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
 
 @NgModule({
   declarations: [
@@ -47,7 +44,6 @@ import { LocationComponent } from './components/location/location.component';
     ProfileComponent,
     MenuComponent,
     NavigationComponent,
-    LanguageComponent,
     AuthBarComponent,
     LocationComponent,
   ],
@@ -57,9 +53,7 @@ import { LocationComponent } from './components/location/location.component';
     HttpClientModule,
     AppRoutingModule,
     SharedModule,
-    FormsModule,
     FlexLayoutModule,
-    MaterialModule,
     FirebaseModule,
     NgxAuthFirebaseUIModule,
     NgcCookieConsentModule.forRoot(cookieConfig),
@@ -69,7 +63,6 @@ import { LocationComponent } from './components/location/location.component';
   ],
   providers: [
     AuthService,
-    LanguageService
   ],
   bootstrap: [ AppComponent ]
 })

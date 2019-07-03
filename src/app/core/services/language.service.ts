@@ -3,7 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
 import { TranslateCacheService } from 'ngx-translate-cache';
 
-@Injectable ()
+@Injectable ({
+    providedIn: 'root'
+})
 export class LanguageService {
     selected: string;
 

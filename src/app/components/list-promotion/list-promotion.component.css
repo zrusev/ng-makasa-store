@@ -1,17 +1,16 @@
 .container {
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1;
 }
 
 .mat-card {
-    width: 30vw;
+    flex: 1 1 30%;
     margin: 1em 1em 1em 1em;
 }
 
 .media {
     background: #666;
-    width: 20vw;
+    width: 80%;
     position: relative;
     margin: 1rem auto;
     overflow: hidden;
