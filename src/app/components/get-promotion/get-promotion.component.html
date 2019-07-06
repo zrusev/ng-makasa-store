@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card *ngFor="let promotion of promotions">
+  <mat-card>
       <mat-card-header>
         <mat-chip-list>
           <mat-chip *ngFor="let tag of promotion.tags">#{{ tag.name }}</mat-chip>
@@ -9,10 +9,7 @@
         <img src="{{promotion.images[0].url}}" alt="mountain">
       </div>
       <mat-card-content>
-        <p>{{ promotion.description | slice:0:50 }}...</p>
-        <p>
-          <a [routerLink]="['/promotions', promotion.id]">read more >></a>
-        </p>
+        <p>{{ promotion.description }}</p>
       </mat-card-content>
       <mat-card-actions>
         <!-- <button mat-button>LIKE</button>

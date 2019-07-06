@@ -1,7 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { PromotionService } from 'src/app/core/services/promotion.service';
 import { Subscription } from 'rxjs';
+import { IAppState } from 'src/app/+store/state/app.state';
+import { Store, select } from '@ngrx/store';
+import { selectPromotionsList } from 'src/app/+store/selectors/promotion.selectors';
 import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { GetPromotions } from 'src/app/+store/actions/promotion.action';
 
 @Component({
   selector: 'app-list-promotion',
@@ -11,18 +14,18 @@ import { ListPromotion } from 'src/app/core/models/list-promotion';
 export class ListPromotionComponent implements OnInit, OnDestroy {
 
   promotions: ListPromotion[] = [];
-  private propotions$: Subscription;
+  private promotions$: Subscription;
 
-  constructor(private promotionsService: PromotionService) { }
+  constructor(private store: Store<IAppState>) { }
 
   ngOnInit() {
-    this.promotionsService.fetchAllEvents();
-    this.propotions$ = this.promotionsService.promotions$.subscribe((promotions) => {
-      this.promotions = promotions;
+    this.store.dispatch(new GetPromotions());
+    this.promotions$ = this.store.pipe(select(selectPromotionsList)).subscribe((promotions) => {
+       this.promotions = promotions;
     });
   }
 
   ngOnDestroy() {
-    this.propotions$.unsubscribe();
+    this.promotions$.unsubscribe();
   }
 }

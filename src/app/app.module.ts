@@ -32,6 +32,14 @@ import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.componen
 import { AuthService } from './core/services/auth.service';
 
 import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './+store/reducers/app.reducers';
+import { PromotionEffects } from './+store/effects/promotion.effects';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { GetPromotionComponent } from './components/get-promotion/get-promotion.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +54,7 @@ import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './c
     NavigationComponent,
     AuthBarComponent,
     LocationComponent,
+    GetPromotionComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +69,10 @@ import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './c
     TranslateModule.forRoot(translateConfig),
     TranslateCacheModule.forRoot(cookieCacheConfig),
     AgmCoreModule.forRoot(agmConfig),
+    StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot([PromotionEffects]),
+    StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],
   providers: [
     AuthService,

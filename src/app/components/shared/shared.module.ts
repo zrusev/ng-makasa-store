@@ -12,6 +12,7 @@ import { NavigationService } from 'src/app/core/services/navigation.service';
 import { LanguageService } from 'src/app/core/services/language.service';
 
 import { translateConfig } from 'src/app/core/config/index.config';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { translateConfig } from 'src/app/core/config/index.config';
         FormsModule,
         MaterialModule,
         TranslateModule.forChild(translateConfig),
+        RouterModule,
     ],
     exports: [
         CommonModule,
@@ -33,6 +35,7 @@ import { translateConfig } from 'src/app/core/config/index.config';
         LanguageComponent,
         ListPromotionComponent,
         TranslateModule,
+        RouterModule,
     ],
     providers: [
         NavigationService,
