@@ -66,7 +66,7 @@ import { ErrorEffects } from './+store/effects/error.effects';
     TranslateModule.forRoot(translateConfig),
     TranslateCacheModule.forRoot(cookieCacheConfig),
     AgmCoreModule.forRoot(agmConfig),
-    StoreModule.forRoot(appReducers),
+    StoreModule.forRoot(appReducers()),
     EffectsModule.forRoot([PromotionEffects, ErrorEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],

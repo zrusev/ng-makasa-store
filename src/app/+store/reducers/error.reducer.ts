@@ -1,10 +1,10 @@
 import { EError, ErrorActions } from '../actions/error.action';
 import { initialErrorState, IErrorState } from '../state/error.state';
 
-export const errorReducer = (
+export function errorReducer(
     state = initialErrorState,
     action: ErrorActions
-): IErrorState => {
+): IErrorState {
     switch (action.type) {
       case EError.AddError: {
         return {
@@ -15,4 +15,4 @@ export const errorReducer = (
       default:
         return state;
     }
-};
+}

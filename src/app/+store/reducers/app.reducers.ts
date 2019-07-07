@@ -4,8 +4,11 @@ import { IAppState } from '../state/app.state';
 import { promotionReducers } from './promotion.reducers';
 import { errorReducer } from './error.reducer';
 
-export const appReducers: ActionReducerMap<IAppState, any> = {
-    router: routerReducer,
-    promotions: promotionReducers,
-    error: errorReducer
-};
+export function appReducers(): ActionReducerMap<IAppState, any> {
+    return {
+        router: routerReducer,
+        promotions: promotionReducers,
+        error: errorReducer
+    };
+}
+

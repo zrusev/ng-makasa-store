@@ -1,10 +1,10 @@
 import { IPromotionState, initialPromotionsState } from '../state/promotion.state';
 import { PromotionActions, EPromotionActions } from '../actions/promotion.action';
 
-export const promotionReducers = (
+export function promotionReducers(
     state = initialPromotionsState,
     action: PromotionActions
-): IPromotionState => {
+): IPromotionState {
     switch (action.type) {
         case EPromotionActions.GetPromotionsSuccess: {
             return {
@@ -21,4 +21,4 @@ export const promotionReducers = (
         default:
             return state;
     }
-};
+}
