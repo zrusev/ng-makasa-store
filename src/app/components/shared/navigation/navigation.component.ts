@@ -9,7 +9,7 @@ import { NavigationService } from 'src/app/core/services/navigation.service';
 export class NavigationComponent { 
   constructor(private navigationService: NavigationService) { }
 
-  navigate(index: Number) {
+  navigate(index: number) {
     this.navigationService.changeIndex(index);
   }
 }

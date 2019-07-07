@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     this.slides$ = this.http.get<string[]>('../../../assets/images.json', { responseType: 'json' });
   }
 
-  navigate(index: Number) {
+  navigate(index: number) {
     this.navigationService.changeIndex(index);
   }
 }

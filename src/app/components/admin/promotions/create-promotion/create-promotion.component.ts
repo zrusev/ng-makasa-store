@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { PromotionService } from 'src/app/core/services/promotion.service';
-import { Tag } from 'src/app/core/models/tag';
+import { ITag } from 'src/app/core/models/tag';
 import { User } from 'src/app/core/models/user';
+import { IImage } from 'src/app/core/models/image';
+import { IPromotion } from 'src/app/core/models/promotion';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { Image } from 'src/app/core/models/image';
-import { CreatePromotion } from 'src/app/core/models/create-promotion';
 
 @Component({
   selector: 'app-create-promotion',
@@ -15,8 +15,8 @@ import { CreatePromotion } from 'src/app/core/models/create-promotion';
 export class CreatePromotionComponent implements OnInit {
 
   private user: User;
-  private tags: Tag[] = [];
-  private images: Image[] = [];
+  private tags: ITag[] = [];
+  private images: IImage[] = [];
 
   form: FormGroup;
   isHovering: boolean;
@@ -36,10 +36,10 @@ export class CreatePromotionComponent implements OnInit {
 
   createPromotion() {
     if (this.authService.canEdit(this.user)) {
-      const promotion: CreatePromotion = Object.assign(this.form.value,
-                                                      {tags: this.tags},
-                                                      {images: this.images},
-                                                      {createdOn: new Date()});
+      const promotion: IPromotion = Object.assign(this.form.value,
+                                                 {tags: this.tags},
+                                                 {images: this.images},
+                                                 {createdOn: new Date()});
       this.promotionService.addPromotion(promotion);
     } else {
       console.error('you are not allowed to do that!');

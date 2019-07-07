@@ -3,7 +3,7 @@ import { Subscription } from 'rxjs';
 import { IAppState } from 'src/app/+store/state/app.state';
 import { Store, select } from '@ngrx/store';
 import { selectPromotionsList } from 'src/app/+store/selectors/promotion.selectors';
-import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { IPromotion } from 'src/app/core/models/promotion';
 import { GetPromotions } from 'src/app/+store/actions/promotion.action';
 
 @Component({
@@ -13,7 +13,7 @@ import { GetPromotions } from 'src/app/+store/actions/promotion.action';
 })
 export class ListPromotionComponent implements OnInit, OnDestroy {
 
-  promotions: ListPromotion[] = [];
+  promotions: IPromotion[] = [];
   private promotions$: Subscription;
 
   constructor(private store: Store<IAppState>) { }

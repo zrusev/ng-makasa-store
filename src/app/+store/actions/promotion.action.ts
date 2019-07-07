@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { IPromotion } from 'src/app/core/models/promotion';
 
 export enum EPromotionActions {
     GetPromotions = '[Promotion] Get Promotions',
@@ -14,7 +14,7 @@ export class GetPromotions implements Action {
 
 export class GetPromotionsSuccess implements Action {
     public readonly type = EPromotionActions.GetPromotionsSuccess;
-    constructor(public payload: ListPromotion[]) {}
+    constructor(public payload: IPromotion[]) {}
 }
 
 export class GetPromotion implements Action {
@@ -24,7 +24,7 @@ export class GetPromotion implements Action {
 
 export class GetPromotionSuccess implements Action {
     public readonly type = EPromotionActions.GetPromotionSuccess;
-    constructor(public payload: ListPromotion) {}
+    constructor(public payload: IPromotion) {}
 }
 
 export type PromotionActions = GetPromotions | GetPromotionsSuccess | GetPromotion | GetPromotionSuccess;

@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from 'src/app/+store/state/app.state';
+import { IPromotion } from 'src/app/core/models/promotion';
 import { GetPromotion } from 'src/app/+store/actions/promotion.action';
-import { selectSelectedPromotion } from 'src/app/+store/selectors/promotion.selectors';
-import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { selectSelectedPromotion} from 'src/app/+store/selectors/promotion.selectors';
 
 @Component({
   selector: 'app-get-promotion',
@@ -13,13 +13,12 @@ import { ListPromotion } from 'src/app/core/models/list-promotion';
   styleUrls: ['./get-promotion.component.css']
 })
 export class GetPromotionComponent implements OnInit, OnDestroy {
-  promotion: ListPromotion = null;
-  private promotion$: Subscription;
-
   private id: string = null;
+  private promotion$: Subscription;
+  public promotion: IPromotion = null;
 
   constructor(private store: Store<IAppState>,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];

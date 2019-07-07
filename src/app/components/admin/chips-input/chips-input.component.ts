@@ -1,7 +1,7 @@
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Component, Output, EventEmitter, OnInit } from '@angular/core';
 import {MatChipInputEvent} from '@angular/material/chips';
-import { Tag } from 'src/app/core/models/tag';
+import { ITag } from 'src/app/core/models/tag';
 
 @Component({
   selector: 'app-chips-input',
@@ -10,14 +10,14 @@ import { Tag } from 'src/app/core/models/tag';
 })
 export class ChipsInputComponent implements OnInit {
 
-  @Output() tagsEmitter: EventEmitter<Tag[]> = new EventEmitter();
+  @Output() tagsEmitter: EventEmitter<ITag[]> = new EventEmitter();
 
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   visible = true;
   selectable = true;
   removable = true;
   addOnBlur = true;
-  tags: Tag[] = [
+  tags: ITag[] = [
     { name: 'МаКаСа' },
     { name: 'Био' },
   ];
@@ -42,7 +42,7 @@ export class ChipsInputComponent implements OnInit {
     }
   }
 
-  remove(tag: Tag): void {
+  remove(tag: ITag): void {
     const index = this.tags.indexOf(tag);
 
     if (index >= 0) {

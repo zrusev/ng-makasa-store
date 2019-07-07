@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/app/material.module';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,7 +13,6 @@ import { NavigationService } from 'src/app/core/services/navigation.service';
 import { LanguageService } from 'src/app/core/services/language.service';
 
 import { translateConfig } from 'src/app/core/config/index.config';
-import { RouterModule } from '@angular/router';
 
 @NgModule({
     declarations: [

@@ -1,21 +1,20 @@
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { FirebaseModule } from './firebase.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { TranslateCacheModule } from 'ngx-translate-cache';
-
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
-
-import { SharedModule } from './components/shared/shared.module';
 import { AgmCoreModule } from '@agm/core';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { SharedModule } from './components/shared/shared.module';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/about/about.component';
@@ -28,18 +27,15 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { LocationComponent } from './components/location/location.component';
 import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
+import { GetPromotionComponent } from './components/get-promotion/get-promotion.component';
 
 import { AuthService } from './core/services/auth.service';
-
-import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
-import { StoreModule } from '@ngrx/store';
 import { appReducers } from './+store/reducers/app.reducers';
 import { PromotionEffects } from './+store/effects/promotion.effects';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
+
 import { environment } from 'src/environments/environment';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { GetPromotionComponent } from './components/get-promotion/get-promotion.component';
+import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
+import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -76,6 +72,9 @@ import { GetPromotionComponent } from './components/get-promotion/get-promotion.
   ],
   providers: [
     AuthService,
+    { provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true }
   ],
   bootstrap: [ AppComponent ]
 })

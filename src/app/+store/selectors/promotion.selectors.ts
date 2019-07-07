@@ -14,5 +14,3 @@ export const selectSelectedPromotion = createSelector(
     (state: IPromotionState) => state.selectedPromotion
 );
 
-
-

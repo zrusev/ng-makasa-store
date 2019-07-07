@@ -21,4 +21,4 @@ export const promotionReducers = (
         default:
             return state;
     }
-}
+};

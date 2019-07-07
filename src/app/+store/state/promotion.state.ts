@@ -1,8 +1,8 @@
-import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { IPromotion } from 'src/app/core/models/promotion';
 
 export interface IPromotionState {
-    promotions: ListPromotion[];
-    selectedPromotion: ListPromotion;
+    promotions: IPromotion[];
+    selectedPromotion: IPromotion;
 }
 
 export const initialPromotionsState: IPromotionState = {

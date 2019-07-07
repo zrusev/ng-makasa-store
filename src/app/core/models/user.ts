@@ -1,4 +1,4 @@
-export interface Roles {
+export interface IRoles {
     reader: boolean;
     writer?: boolean;
     admin?: boolean;
@@ -11,7 +11,7 @@ export class User {
     phoneNumber: string;
     photoURL: string;
     providerId: string;
-    roles: Roles;
+    roles: IRoles;
 
     constructor(authData) {
       this.uid = authData.uid;

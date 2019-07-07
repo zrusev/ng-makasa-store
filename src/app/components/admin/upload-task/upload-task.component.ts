@@ -3,7 +3,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { Observable, of } from 'rxjs';
 import { tap, finalize, catchError } from 'rxjs/operators';
-import { Image } from 'src/app/core/models/image';
+import { IImage } from 'src/app/core/models/image';
 
 @Component({
   selector: 'app-upload-task',
@@ -17,7 +17,7 @@ export class UploadTaskComponent implements OnInit {
   downloadURL: string;
 
   @Input() file: File;
-  @Output() imageEmitter: EventEmitter<Image> = new EventEmitter();
+  @Output() imageEmitter: EventEmitter<IImage> = new EventEmitter();
 
   constructor(private storage: AngularFireStorage,
               private db: AngularFirestore) { }

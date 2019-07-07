@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { of, Observable, throwError } from 'rxjs';
+import { switchMap, catchError } from 'rxjs/operators';
 import { Effect, ofType, Actions } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 
@@ -9,9 +9,10 @@ import { EPromotionActions,
          GetPromotions,
          GetPromotionsSuccess,
          GetPromotion,
-         GetPromotionSuccess } from '../actions/promotion.action';
+         GetPromotionSuccess} from '../actions/promotion.action';
 import { PromotionService } from 'src/app/core/services/promotion.service';
-import { ListPromotion } from 'src/app/core/models/list-promotion';
+import { IPromotion } from 'src/app/core/models/promotion';
+import { AddGlobalError } from '../actions/error.action';
 
 @Injectable()
 export class PromotionEffects {
@@ -21,16 +22,24 @@ export class PromotionEffects {
                 private store: Store<IAppState>) {}
 
     @Effect()
-    getPromotions$ = this.actions$.pipe(
+    getPromotions$: Observable<AddGlobalError | GetPromotionsSuccess> = this.actions$.pipe(
         ofType<GetPromotions>(EPromotionActions.GetPromotions),
-        switchMap(() => this.promotionService.fetchAllPromotions()),
-        switchMap((promotions: ListPromotion[]) => of(new GetPromotionsSuccess(promotions)))
+        switchMap(() =>
+            this.promotionService.fetchAllPromotions().pipe(
+                switchMap((promotions: IPromotion[]) => of(new GetPromotionsSuccess(promotions))),
+                catchError((error: any) => of(new AddGlobalError(error)))
+            )
+        )
     );
 
     @Effect()
-    getPromotion$ = this.actions$.pipe(
+    getPromotion$: Observable<AddGlobalError | GetPromotionSuccess> = this.actions$.pipe(
         ofType<GetPromotion>(EPromotionActions.GetPromotion),
-        switchMap(action => this.promotionService.fetchPromotion(action.payload)),
-        switchMap((promotion: ListPromotion) => of(new GetPromotionSuccess(promotion)))
+        switchMap(action =>
+            this.promotionService.fetchPromotion(action.payload).pipe(
+                switchMap((promotion: IPromotion) => of(new GetPromotionSuccess(promotion))),
+                catchError(error => of(new AddGlobalError(error)))
+            )
+        )
     );
 }
