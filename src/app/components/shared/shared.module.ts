@@ -11,6 +11,7 @@ import { LanguageComponent } from './language/language.component';
 
 import { NavigationService } from 'src/app/core/services/navigation.service';
 import { LanguageService } from 'src/app/core/services/language.service';
+import { NotificationService } from 'src/app/core/services/notificationService.service';
 
 import { translateConfig } from 'src/app/core/config/index.config';
 
@@ -40,6 +41,7 @@ import { translateConfig } from 'src/app/core/config/index.config';
     providers: [
         NavigationService,
         LanguageService,
+        NotificationService,
     ]
 })
 export class SharedModule { }

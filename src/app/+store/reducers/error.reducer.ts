@@ -9,7 +9,7 @@ export const errorReducer = (
       case EError.AddError: {
         return {
             ...state,
-            error: action.payload
+            error: action.payload.message
         };
       }
       default:
