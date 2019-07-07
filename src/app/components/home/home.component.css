@@ -5,7 +5,7 @@
 
 .title {
     text-align: center;
-    margin: 5em 1em 3em 1em;
+    margin: 10em 1em 3em 1em;
 }
 
 .welcome-container {
@@ -30,13 +30,13 @@
 }
 
 .welcome-container section.image {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
     padding-left: 10em;
 }
 
 .welcome-container section.image img {
-    max-width: 100%;
+    width: 100%;
+    height: auto;
     display: block;
     left: 1em;
     position: relative;
@@ -57,7 +57,7 @@
 }
 
 .about-container section.bottle img {
-    width: 70%;
+    width: 60%;
     position: absolute;
     bottom: 2em;
 }
@@ -91,11 +91,12 @@ section.brands {
     flex-direction: row;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-items: baseline;
-    margin: 0 10% 20em 10%;
+    align-items: center;
+    margin: 0 1em 20em 1em;
 }
 
 section.brands img {
+    max-width: 20%;
     margin: 1em 0 1em 0;
 }
 
@@ -120,7 +121,7 @@ section.promotions div.promotions-item img {
     object-fit: cover;
 }
 
-div.flower {
+/* div.flower {
     width: 100%;
     height: auto;
     margin-bottom: 20em;
@@ -128,7 +129,7 @@ div.flower {
 
 div.flower img {
     width: 75%;
-}
+} */
 
 .about-text.blog {
     margin: 0 1em 0 1em;
@@ -161,8 +162,10 @@ div.flower img {
     opacity: 0.8;
 }
 
-.blog section.description p {
+.blog section.description p:nth-child(2) {
     max-width: 100%;
+    line-height: 1.5em;
+    color: #151515;
 }
 
 .blog section.olive {
