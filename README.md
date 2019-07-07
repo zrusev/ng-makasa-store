@@ -14,8 +14,10 @@
 - Google Firestore hosted - database and storage; Firestore rules
 - Angular Material UI
 - Roles: reader, writer, admin. Role based access to different components
-- Language translation service
+- NgRx Store; state; reducers; effects; selectors 
+- Language translation service; Notification service
 - GDPR consent implementation
-- Routing modules. Authentication guards. Lazy loading on the administative part
+- Routing modules. Authentication guards. Global error handling interceptor.
+- Shared module. Lazy loading on the administative part.
 - Custom directive. Upload multiple files to storage as part of the administative part
 - Google Maps implementation
