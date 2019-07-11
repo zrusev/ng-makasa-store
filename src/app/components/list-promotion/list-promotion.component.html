@@ -1,8 +1,13 @@
 <div class="container">
+  <app-spinner></app-spinner>
   <mat-card *ngFor="let promotion of promotions">
       <mat-card-header>
         <mat-chip-list>
-          <mat-chip *ngFor="let tag of promotion.tags">#{{ tag.name }}</mat-chip>
+          <mat-chip *ngFor="let tag of promotion.tags">
+            <a href="https://www.facebook.com/search/top/?q=%23{{tag.name}}" target="_blank">
+              #{{ tag.name }}
+            </a>
+          </mat-chip>
         </mat-chip-list>
       </mat-card-header>
       <div class="media ar-1x1">

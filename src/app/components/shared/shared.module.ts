@@ -14,12 +14,14 @@ import { LanguageService } from 'src/app/core/services/language.service';
 import { NotificationService } from 'src/app/core/services/notificationService.service';
 
 import { translateConfig } from 'src/app/core/config/index.config';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
     declarations: [
         DropzoneDirective,
         LanguageComponent,
         ListPromotionComponent,
+        SpinnerComponent,
     ],
     imports: [
         CommonModule,

@@ -37,6 +37,7 @@ import { environment } from 'src/environments/environment';
 import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ErrorEffects } from './+store/effects/error.effects';
+import { SpinnerEffects } from './+store/effects/spinner.effects';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,7 @@ import { ErrorEffects } from './+store/effects/error.effects';
     TranslateCacheModule.forRoot(cookieCacheConfig),
     AgmCoreModule.forRoot(agmConfig),
     StoreModule.forRoot(appReducers()),
-    EffectsModule.forRoot([PromotionEffects, ErrorEffects]),
+    EffectsModule.forRoot([PromotionEffects, ErrorEffects, SpinnerEffects]),
     StoreRouterConnectingModule.forRoot({ stateKey: 'router' }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
   ],

@@ -7,10 +7,26 @@
   <i class="material-icons">home</i>
   {{ 'navigation.home' | translate }}
 </a>
-<a mat-list-item routerLink="/about">
+<a mat-list-item routerLink="/about" (click)="navigate(0)">
   <i class="material-icons">store</i>
   {{ 'navigation.about' | translate }}
-</a>          
+</a>
+<a mat-list-item routerLink="/about" (click)="navigate(1)">
+  <i class="material-icons">contacts</i>
+  {{ 'navigation.contacts' | translate }}
+</a>
+<a mat-list-item routerLink="/about" (click)="navigate(2)">
+  <i class="material-icons">photo</i>
+  {{ 'navigation.gallery' | translate }}
+</a>
+<a mat-list-item routerLink="/home">
+  <i class="material-icons">collections</i>
+  {{ 'navigation.promotions' | translate }}
+</a>
+<a mat-list-item routerLink="/home">
+  <i class="material-icons">forum</i>
+  {{ 'navigation.blog' | translate }}
+</a>
 <div *ngIf="authService.user$ | async; else login">
   <a mat-list-item routerLink="/account/profile">
     <i class="material-icons">person_pin</i>

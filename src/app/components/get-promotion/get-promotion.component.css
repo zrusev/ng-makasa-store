@@ -71,6 +71,10 @@
 }
 
 .mat-chip {
-    color: #fff;
     background: #6B7D41;
+}
+
+.mat-chip > a {
+    color: #fff;
+    text-decoration: none;
 }

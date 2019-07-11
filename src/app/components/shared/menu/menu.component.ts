@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/core/services/auth.service';
 import { Router, Event, NavigationEnd } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
+import { NavigationService } from 'src/app/core/services/navigation.service';
 
 @Component({
   selector: 'app-menu',
@@ -16,7 +17,8 @@ export class MenuComponent {
     public authService: AuthService,
     private router: Router,
     private snackBar: MatSnackBar,
-    private translateService: TranslateService
+    private translateService: TranslateService,
+    private navigationService: NavigationService
   ) {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -36,5 +38,9 @@ export class MenuComponent {
     this.snackBar.open(logoutMessage, 'OK', {
       duration: 3000
     });
+  }
+
+  navigate(index: number) {
+    this.navigationService.changeIndex(index);
   }
 }
