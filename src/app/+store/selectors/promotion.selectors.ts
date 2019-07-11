@@ -2,7 +2,7 @@ import { createSelector } from '@ngrx/store';
 import { IAppState } from '../state/app.state';
 import { IPromotionState } from '../state/promotion.state';
 
-const selectPromotions = (state: IAppState) => state.promotions;
+const selectPromotions = (state: IAppState) => state.promoter;
 
 export const selectPromotionsList = createSelector(
     selectPromotions,

@@ -5,10 +5,10 @@ import { HideLoader, ShowLoader } from 'src/app/core/decorators/spinner.decorato
 export enum EPromotionActions {
     GetPromotions = '[Promotion] Get Promotions',
     GetPromotionsSuccess = '[Promotion] Get Promotions Success',
+    GetPromotionsFailure = '[Promotion] Get Promotions Failure',
     GetPromotion = '[Promotion] Get Promotion',
     GetPromotionSuccess = '[Promotion] Get Promotion Success'
 }
-
 
 @ShowLoader()
 export class GetPromotions implements Action {
@@ -21,12 +21,11 @@ export class GetPromotionsSuccess implements Action {
     constructor(public payload: IPromotion[]) {}
 }
 
-// ToDo
-// @HideLoader(EPromotionActions.GetPromotions)
-// export class GetPromotionsFailure implements Action {
-//     public readonly type = EPromotionActions.GetPromotionsFailure;
-//     constructor(public payload: IPromotion[]) {}
-// }
+@HideLoader(EPromotionActions.GetPromotions)
+export class GetPromotionsFailure implements Action {
+    public readonly type = EPromotionActions.GetPromotionsFailure;
+    constructor() {}
+}
 
 export class GetPromotion implements Action {
     public readonly type = EPromotionActions.GetPromotion;
@@ -38,4 +37,8 @@ export class GetPromotionSuccess implements Action {
     constructor(public payload: IPromotion) {}
 }
 
-export type PromotionActions = GetPromotions | GetPromotionsSuccess | GetPromotion | GetPromotionSuccess;
+export type PromotionActions = GetPromotions |
+                               GetPromotionsSuccess |
+                               GetPromotionsFailure |
+                               GetPromotion |
+                               GetPromotionSuccess;

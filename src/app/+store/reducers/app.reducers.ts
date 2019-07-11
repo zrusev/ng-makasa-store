@@ -8,9 +8,9 @@ import { spinnerReducer } from './spinner.reducers';
 export function appReducers(): ActionReducerMap<IAppState, any> {
     return {
         router: routerReducer,
-        promotions: promotionReducers,
-        error: errorReducer,
-        spinner: spinnerReducer
+        promoter: promotionReducers,
+        global: errorReducer,
+        loader: spinnerReducer
     };
 }
 

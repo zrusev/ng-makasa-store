@@ -36,8 +36,8 @@ export function spinnerReducer(
 
             return Object.assign(state, {
                 spinner: {
-                    actionsInProgress: newActionsInProgress,
-                    active: state.spinner.active > 0 ? newActionsInProgress.length : 0
+                    active: state.spinner.active > 0 ? newActionsInProgress.length : 0,
+                    actionsInProgress: newActionsInProgress
                 }
             });
         }

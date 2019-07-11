@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { IAppState } from 'src/app/+store/state/app.state';
 import { Observable } from 'rxjs';
 import { isLoadingSpinnerActive } from 'src/app/+store/selectors/spinner.selectors';
@@ -13,12 +13,11 @@ export class SpinnerComponent implements OnInit {
   color = 'primary';
   mode = 'indeterminate';
   value = 50;
-  isLoading: Observable<any>;
+  isLoading: Observable<number>;
 
   constructor(private store: Store<IAppState>) { }
 
   ngOnInit() {
-    this.isLoading = this.store.pipe(select(isLoadingSpinnerActive));
-    this.isLoading.subscribe(data => console.log(data));
+    this.isLoading = this.store.select(isLoadingSpinnerActive);
   }
 }

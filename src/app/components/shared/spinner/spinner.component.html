@@ -1,9 +1,10 @@
 <ng-content *ngIf="!(isLoading | async); else spinner"></ng-content>
 <ng-template #spinner>
-  <mat-progress-spinner 
-    class="example-margin"
-    [color]="color"
-    [mode]="mode"
-    [value]="value">
-  </mat-progress-spinner>
+    <div class="loading-indicator">
+      <mat-progress-spinner
+        [color]="color"
+        [mode]="mode"
+        [value]="value">
+      </mat-progress-spinner>
+  </div>
 </ng-template>

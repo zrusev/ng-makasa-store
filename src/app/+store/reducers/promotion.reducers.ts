@@ -18,6 +18,12 @@ export function promotionReducers(
                 selectedPromotion: action.payload
             };
         }
+        case EPromotionActions.GetPromotionsFailure: {
+            return {
+                ...state,
+                promotions: []
+            };
+        }
         default:
             return state;
     }

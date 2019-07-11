@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
-import { switchMap, catchError } from 'rxjs/operators';
+import { switchMap, catchError, timeoutWith } from 'rxjs/operators';
 import { Effect, ofType, Actions } from '@ngrx/effects';
 import { EPromotionActions,
          GetPromotions,
          GetPromotionsSuccess,
          GetPromotion,
-         GetPromotionSuccess} from '../actions/promotion.action';
+         GetPromotionSuccess,
+         GetPromotionsFailure} from '../actions/promotion.action';
 import { AddGlobalError } from '../actions/error.action';
 import { PromotionService } from 'src/app/core/services/promotion.service';
 import { IPromotion } from 'src/app/core/models/promotion';
@@ -18,10 +19,11 @@ export class PromotionEffects {
                 private actions$: Actions) {}
 
     @Effect()
-    getPromotions$: Observable<AddGlobalError | GetPromotionsSuccess> = this.actions$.pipe(
+    getPromotions$: Observable<GetPromotionsFailure | AddGlobalError | GetPromotionsSuccess> = this.actions$.pipe(
         ofType<GetPromotions>(EPromotionActions.GetPromotions),
         switchMap(() =>
             this.promotionService.fetchAllPromotions().pipe(
+                // timeoutWith(5000, of(new GetPromotionsFailure())),
                 switchMap((promotions: IPromotion[]) => of(new GetPromotionsSuccess(promotions))),
                 catchError((error: any) => of(new AddGlobalError(error)))
             )
