@@ -27,7 +27,8 @@ import { MenuComponent } from './components/shared/menu/menu.component';
 import { NavigationComponent } from './components/shared/navigation/navigation.component';
 import { LocationComponent } from './components/location/location.component';
 import { AuthBarComponent } from './components/shared/auth-bar/auth-bar.component';
-import { GetPromotionComponent } from './components/get-promotion/get-promotion.component';
+import { PromotionsComponent } from './components/promotions/promotions.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 import { AuthService } from './core/services/auth.service';
 import { appReducers } from './+store/reducers/app.reducers';
@@ -52,7 +53,8 @@ import { SpinnerEffects } from './+store/effects/spinner.effects';
     NavigationComponent,
     AuthBarComponent,
     LocationComponent,
-    GetPromotionComponent,
+    PromotionsComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

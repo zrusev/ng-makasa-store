@@ -7,7 +7,8 @@ export enum EPromotionActions {
     GetPromotionsSuccess = '[Promotion] Get Promotions Success',
     GetPromotionsFailure = '[Promotion] Get Promotions Failure',
     GetPromotion = '[Promotion] Get Promotion',
-    GetPromotionSuccess = '[Promotion] Get Promotion Success'
+    GetPromotionSuccess = '[Promotion] Get Promotion Success',
+    GetPromotionFailure = '[Promotion] Get Promotion Failure',
 }
 
 @ShowLoader()
@@ -27,18 +28,27 @@ export class GetPromotionsFailure implements Action {
     constructor() {}
 }
 
+@ShowLoader()
 export class GetPromotion implements Action {
     public readonly type = EPromotionActions.GetPromotion;
     constructor(public payload: string) {}
 }
 
+@HideLoader(EPromotionActions.GetPromotion)
 export class GetPromotionSuccess implements Action {
     public readonly type = EPromotionActions.GetPromotionSuccess;
     constructor(public payload: IPromotion) {}
+}
+
+@HideLoader(EPromotionActions.GetPromotion)
+export class GetPromotionFailure implements Action {
+    public readonly type = EPromotionActions.GetPromotionFailure;
+    constructor() {}
 }
 
 export type PromotionActions = GetPromotions |
                                GetPromotionsSuccess |
                                GetPromotionsFailure |
                                GetPromotion |
-                               GetPromotionSuccess;
+                               GetPromotionSuccess |
+                               GetPromotionFailure;

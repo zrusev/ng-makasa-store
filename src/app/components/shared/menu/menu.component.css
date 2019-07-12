@@ -1,6 +1,27 @@
 .close-button {
-    display:flex-end;
+    display:flex;
+    flex-direction: row;
     cursor: pointer;
     background-color: black;
-    color: white
+    color: white;
+    width: 50vw;
+    height: 6em;
+}
+
+.close-button i {
+    font-size: 6em;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper span {
+    padding-left: 0.5em;
+}
+
+.language {
+    display: flex;
+    justify-content: center;
 }

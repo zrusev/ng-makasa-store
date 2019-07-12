@@ -26,7 +26,7 @@
     [messageOnAuthSuccess]="'ngxauthfirebaseui.messageOnAuthSuccess' | translate:{'displayName': loggedUserName}"
     [messageOnAuthError]="'ngxauthfirebaseui.messageOnAuthError' | translate"
     [guestEnabled]="false"
-    [providers]="[providers.Google, providers.Facebook]"
+    [providers]="[]"
     (onSuccess)="catchSuccess($event)"
   ></ngx-auth-firebaseui>
 </div>

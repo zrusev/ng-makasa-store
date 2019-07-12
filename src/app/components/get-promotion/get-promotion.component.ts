@@ -24,9 +24,10 @@ export class GetPromotionComponent implements OnInit, OnDestroy {
     this.id = this.route.snapshot.params['id'];
 
     this.store.dispatch(new GetPromotion(this.id));
-    this.promotion$ = this.store.pipe(select(selectSelectedPromotion)).subscribe((promotion) => {
-      this.promotion = promotion;
-    });
+    this.promotion$ = this.store.pipe(select(selectSelectedPromotion))
+      .subscribe((promotion) => {
+        this.promotion = promotion;
+      });
   }
 
   ngOnDestroy() {

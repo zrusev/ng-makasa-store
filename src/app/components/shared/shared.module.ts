@@ -15,12 +15,14 @@ import { NotificationService } from 'src/app/core/services/notificationService.s
 
 import { translateConfig } from 'src/app/core/config/index.config';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { GetPromotionComponent } from '../get-promotion/get-promotion.component';
 
 @NgModule({
     declarations: [
         DropzoneDirective,
         LanguageComponent,
         ListPromotionComponent,
+        GetPromotionComponent,
         SpinnerComponent,
     ],
     imports: [
@@ -36,6 +38,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
         MaterialModule,
         DropzoneDirective,
         LanguageComponent,
+        GetPromotionComponent,
         ListPromotionComponent,
         TranslateModule,
         RouterModule,

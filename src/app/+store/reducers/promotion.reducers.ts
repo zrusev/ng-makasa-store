@@ -24,6 +24,12 @@ export function promotionReducers(
                 promotions: []
             };
         }
+        case EPromotionActions.GetPromotionFailure: {
+            return {
+                ...state,
+                selectedPromotion: null
+            };
+        }
         default:
             return state;
     }

@@ -7,11 +7,15 @@ import { ProfileComponent } from './components/identity/profile/profile.componen
 import { GetPromotionComponent } from './components/get-promotion/get-promotion.component';
 import { LoggedInGuard } from 'ngx-auth-firebaseui';
 import { AdminGuard } from './core/guards/admin.guard';
+import { PromotionsComponent } from './components/promotions/promotions.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'promotions', component: PromotionsComponent },
+  { path: 'blog', component: BlogComponent },
   { path: 'promotions/:id', component: GetPromotionComponent },
   { path: 'account', component: AccountComponent },
   { path: 'account/profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
