@@ -39,6 +39,7 @@ import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './c
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ErrorEffects } from './+store/effects/error.effects';
 import { SpinnerEffects } from './+store/effects/spinner.effects';
+import { BirthdayComponent } from './components/birthday/birthday.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SpinnerEffects } from './+store/effects/spinner.effects';
     LocationComponent,
     PromotionsComponent,
     BlogComponent,
+    BirthdayComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
+.birthday-container{
+    width: auto;
+    height: 30em;
+    margin: 3em auto;
+}
+
 .home-container {
     font-family: HKGrotesk;
     color: #6B7D41;

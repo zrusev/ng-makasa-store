@@ -26,6 +26,9 @@
 <!-- </section> -->
 
 <div class="home-container">
+  <div class="birthday-container" *ngIf="isBirthday">
+      <app-birthday></app-birthday>
+  </div>
   <div class="welcome-container">
     <section class="title">
       <div [innerHTML]="'navigation.home_title' | translate"></div>
