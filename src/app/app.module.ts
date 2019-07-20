@@ -5,7 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FirebaseModule } from './firebase.module';
-import { TranslateModule } from '@ngx-translate/core';
 import { TranslateCacheModule } from 'ngx-translate-cache';
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 import { NgcCookieConsentModule } from 'ngx-cookieconsent';
@@ -35,11 +34,12 @@ import { appReducers } from './+store/reducers/app.reducers';
 import { PromotionEffects } from './+store/effects/promotion.effects';
 
 import { environment } from 'src/environments/environment';
-import { cookieConfig, agmConfig, translateConfig, cookieCacheConfig } from './core/config/index.config';
+import { cookieConfig, agmConfig, cookieCacheConfig, translateConfig } from './core/config/index.config';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ErrorEffects } from './+store/effects/error.effects';
 import { SpinnerEffects } from './+store/effects/spinner.effects';
 import { BirthdayComponent } from './components/birthday/birthday.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [

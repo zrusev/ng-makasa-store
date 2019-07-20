@@ -3,9 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { NgcCookieConsentService } from 'ngx-cookieconsent';
 import { TranslateCacheService } from 'ngx-translate-cache';
 
-@Injectable ({
-    providedIn: 'root'
-})
+@Injectable ()
 export class LanguageService {
     selected: string;
 
@@ -17,7 +15,7 @@ export class LanguageService {
 
     setInitialAppLanguage() {
         this.translateService.addLangs(['bg', 'en']);
-        this.translateService.setDefaultLang('bg');
+        this.translateService.setDefaultLang('en');
 
         this.translateCacheService.init();
 

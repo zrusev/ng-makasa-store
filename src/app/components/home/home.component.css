@@ -164,7 +164,7 @@ div.flower img {
     margin: 3em 0 3.5em -3em;
     padding: 2em 1em 2em 4em;
     flex-grow: 1;
-    background: #fff;
+    background: linear-gradient(to right, #fff, transparent);
     opacity: 0.8;
 }
 
@@ -175,7 +175,7 @@ div.flower img {
 }
 
 .blog section.olive {
-    background: #fff;
+    background: linear-gradient(to right, transparent, #fff);
     width: 25%;
     height: auto;
     margin: -4.5em 0 3.5em 0;
